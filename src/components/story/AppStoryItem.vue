@@ -1,21 +1,38 @@
 <template>
   <div class="app-box app-story-item">
-
-    <img src="https://upload.jianshu.io/users/upload_avatars/3629578/d80d6cf5-d91b-4409-8561-f1dd2b95f1ec.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240" alt="">
-    <div>
-      <!-- <i class="fa fa-plus"></i> -->
-      带你去旅行，去吃饭
+    <div class="story-item-content">
+      <img :src="story.imgUrl" alt="">
+      <div class="story-preview">
+        <!-- <i class="fa fa-plus"></i> -->
+        <!-- 带你去旅行，去吃饭 -->
+        <div>
+          <b class="story-site">{{story.site}}</b>
+          <b>{{story.title}}</b>
+        </div>
+        <div>
+          <i class="fa fa-thumbs-o-up">{{story.thrumbnum}}</i>
+          <i class="fa fa-commenting-o">{{story.commentnum}}</i>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'app-story-item'
+    name: 'app-story-item',
+    props: ['story']
   }
 </script>
 
 <style lang="scss">
+$dblue: #5FD9CD;
+$lyellow: #EAF786;
+$lred: #FFB5A1;
+$lgreen: #B8FFB8;
+$lblue: #B8F4FF;
+$lgray: #ddd;
+
   .app-story-item{
     // width: 1.7rem;
     // height: 1.7rem;
@@ -26,9 +43,29 @@
     float: left;
     // border: 1px solid red;
     // margin: 0.05rem;
-    > img{
-      width: 90%;
-      height: 90%;
+    .story-item-content{
+      width: 1.68rem;
+      // background: #26A2FF;
+      margin: 0 auto;
+      > img{
+        width: 1.68rem;
+        height: 1.68rem;
+      }
+        padding: 5px;
+      .story-preview{
+        padding: 5px;
+        text-align: left;
+        margin: 0 auto;
+        width: 1.68rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .story-site{
+          font-size: 1.2em;
+          // color: #fff;
+        }
+      }
     }
+    
   }
 </style>

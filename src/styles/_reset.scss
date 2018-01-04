@@ -4,7 +4,8 @@ body { margin: 0; font-size:1.4rem; line-height: 20px; color: #000; background-c
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block; }
 a { background: transparent; text-decoration: none; color: #000; }
 a:active { outline: 0; }
-b, strong { font-weight: bold; }
+b, strong { font-weight: normal; }
+i { font-style: normal; }
 dfn { font-style:normal;}
 img { border: 0; vertical-align: middle; }
 * {

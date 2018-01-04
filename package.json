@@ -11,7 +11,8 @@
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "mock": "json-server ./static/mock/mock.js -r ./static/mock/routers.json -p 9000"
   },
   "dependencies": {
     "axios": "^0.17.1",

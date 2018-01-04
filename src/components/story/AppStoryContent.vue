@@ -10,28 +10,29 @@
 
     <!-- 内容 -->
     <mt-tab-container v-model="selected" swipeable>
+      <!-- <h1>美食</h1> -->
       <mt-tab-container-item id="story-food">
-        <!-- <h1>美食</h1> -->
-        <div class="app-story-box">
-          <app-story-item></app-story-item>
-          <app-story-item></app-story-item>
-          <app-story-item></app-story-item>
-          <app-story-item></app-story-item>
-          <app-story-item></app-story-item>
-          <app-story-item></app-story-item>
-          <app-story-item></app-story-item>
-          <app-story-item></app-story-item>
-          
+        <div class="app-story-box" v-show="selected==='story-food'">
+          <app-story-item v-for="item in showStory" :story="item" :key="item.id"></app-story-item>
         </div>
       </mt-tab-container-item>
+      <!-- <h1>文化</h1> -->
       <mt-tab-container-item id="story-culture">
-        <!-- <h1>文化</h1> -->
+        <div class="app-story-box" v-show="selected==='story-culture'">
+          <app-story-item v-for="item in showStory" :story="item" :key="item.id"></app-story-item>
+        </div>
       </mt-tab-container-item>
+      <!-- <h1>房源</h1> -->
       <mt-tab-container-item id="story-house">
-        <!-- <h1>房源</h1> -->
+        <div class="app-story-box" v-show="selected==='story-house'">
+          <app-story-item v-for="item in showStory" :story="item" :key="item.id"></app-story-item>
+        </div>
       </mt-tab-container-item>
+      <!-- <h1>景点</h1> -->
       <mt-tab-container-item id="story-scenery">
-        <!-- <h1>景点</h1> -->
+        <div class="app-story-box" v-show="selected==='story-scenery'">
+          <app-story-item v-for="item in showStory" :story="item" :key="item.id"></app-story-item>
+        </div>
       </mt-tab-container-item>
     </mt-tab-container>
 
@@ -39,6 +40,7 @@
 </template>
 
 <script>
+  import axios from 'axios'
   import AppStoryItem from './AppStoryItem'
   export default {
     name: 'app-story-content',
@@ -46,11 +48,30 @@
       return {
         value: '',
         active: true,
-        selected: 'story-food'
+        selected: 'story-food',
+        stories: []
       }
     },
     components: {
       AppStoryItem
+    },
+    computed: {
+      showStory () {
+        let arr = []
+        this.stories.forEach((item) => {
+          if (item.type === this.selected) {
+            arr.push(item)
+          }
+        })
+        return arr
+      }
+    },
+    created () {
+      axios.get('/api/story/stories')
+        .then(res => {
+          this.stories = res.data.data
+          // console.log(res.data.data)
+        })
     }
   }
 </script>

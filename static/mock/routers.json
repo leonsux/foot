@@ -1,0 +1,4 @@
+{
+  "/api/story/stories": "/stories",
+  "/api/collect/collections": "/collections"
+}
