@@ -41,7 +41,6 @@
         })
         axios.get('/api/collect/collections')
           .then(res => {
-            // this.collections = res.data.data
             setTimeout(() => {
               this.collections = this.collections.concat(res.data.data)
               this.loading = false

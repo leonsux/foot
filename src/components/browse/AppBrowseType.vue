@@ -1,7 +1,8 @@
 <template>
   <div class="app-browse-type">
     <!-- <div class="browse-title">民宿类型</div> -->
-    <mt-header title="民宿类型"></mt-header>
+    <!-- <mt-header title="民宿类型"></mt-header> -->
+    <h1 class="browse-title">民宿类型</h1>
     <div class="type-content">
       <div class="ty-item" v-for="item in types">
         <img :src="item.post_img" alt="item.type_name">
@@ -46,7 +47,7 @@
   }
   .type-content{
     text-align: center;
-    overflow-y: auto;
+    // overflow-y: auto;
     .ty-item{
       display: inline-block;
       width: 40%;
