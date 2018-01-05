@@ -42,6 +42,7 @@
 <script>
   import axios from 'axios'
   import AppStoryItem from './AppStoryItem'
+  import { Indicator } from 'mint-ui'
   export default {
     name: 'app-story-content',
     data () {
@@ -66,10 +67,18 @@
         return arr
       }
     },
+    beforeCreate () {
+      console.log('asfb')
+      Indicator.open({
+        text: '哈吉美妈系带',
+        spinnerType: 'triple-bounce'
+      })
+    },
     created () {
       axios.get('/api/story/stories')
         .then(res => {
           this.stories = res.data.data
+          Indicator.close()
           // console.log(res.data.data)
         })
     }

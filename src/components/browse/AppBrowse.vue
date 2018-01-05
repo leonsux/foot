@@ -29,10 +29,4 @@
     flex-direction: column;
     flex: 1;
   }
-  .browse-title{
-    width: 100%;
-    height: 50px;
-    text-align: center;
-    line-height:50px;
-  }
 </style>

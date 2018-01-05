@@ -1,7 +1,7 @@
 <template>
   <div class="app-favorite-item">
     <div class="favorite-img">
-      <img :src="collect.collect_img" alt="">
+      <img v-lazy="collect.collect_img" alt="">
     </div>
     <div class="favorite-info">
       <p class="fav-type">{{collect.hourse_type}}</p>
@@ -42,6 +42,7 @@
 </script>
 
 <style lang="scss">
+  @import '../../styles/app.scss';
   .app-favorite-item{
     padding: 10px;
     .favorite-img{
@@ -56,7 +57,7 @@
         font-size: 16px;
       }
       .fav-rank{
-        color: #FFB5A1;
+        color: $lred;
       }
     }
   }
