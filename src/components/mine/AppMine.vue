@@ -1,13 +1,17 @@
 <template>
   <div class="app-box app-mine">
-    我的
+    <app-register></app-register>
+    <!-- 我的 -->
   </div>
 </template>
 
 <script>
-  
+  import AppRegister from '../register/AppRegister'
   export default {
-    name: 'app-mine'
+    name: 'app-mine',
+    components: {
+      AppRegister
+    }
   }
 </script>
 
