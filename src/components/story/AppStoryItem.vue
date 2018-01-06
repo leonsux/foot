@@ -48,10 +48,10 @@ $lgray: #ddd;
       // background: #26A2FF;
       margin: 0 auto;
       > img{
-        width: 1.68rem;
-        height: 1.68rem;
+        width: 1.58rem;
+        height: 1.58rem;
       }
-        padding: 5px;
+      padding: 5px;
       .story-preview{
         padding: 5px;
         text-align: left;

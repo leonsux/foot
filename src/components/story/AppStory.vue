@@ -2,16 +2,9 @@
   <div class="app-box app-story">
     <!-- 搜索 -->
     <div class="story-search">
-      <mt-search
-        
-        cancel-text="取消"
-        placeholder="搜索">
-        <mt-cell
-          v-for="item in result"
-          :title="item.title"
-          :value="item.value" :key="item.title">
-        </mt-cell>
-      </mt-search>
+      <div class="search-box">
+        <span><i class="search-icon fa fa-search"></i><span>带你去旅行</span></span>
+      </div>
     </div>
     <!-- 内容 -->
     <app-story-content></app-story-content>
@@ -47,5 +40,9 @@
     display: flex;
     flex-direction: column;
     position: relative;
+    // padding: 20px;
+    .story-search{
+      padding: 20px;
+    }
   }
 </style>

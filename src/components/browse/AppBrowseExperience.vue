@@ -11,8 +11,17 @@
 </template>
 
 <script>
+  import Vue from 'vue'
   import axios from 'axios'
-  import { Indicator } from 'mint-ui'
+  import { Indicator, Lazyload } from 'mint-ui'
+
+  Vue.use(Lazyload, {
+    preLoad: 1.3,
+    error: 'dist/error.png',
+    loading: 'https://file.digitaling.com/eImg/uimages/20150907/1441607667921515.gif',
+    attempt: 1
+  })
+
   export default {
     name: 'app-browse-experience',
     data () {
@@ -20,12 +29,17 @@
         experiences: []
       }
     },
-    mounted () {
-      axios.get('/api/browse/experience')
+    methods: {
+      getData () {
+        axios.get('/api/browse/experience')
         .then(res => {
           this.experiences = res.data.data
           Indicator.close()
         })
+      }
+    },
+    mounted () {
+      this.getData()
     },
     beforeCreate () {
       console.log('asfb')
@@ -39,28 +53,30 @@
 
 <style lang="scss">
   .browse-title{
-    margin: 10px;
-    margin-top: 50px;
+    margin: 50px 0 30px 0;
+    // margin-top: 50px;
     font-weight: 400;
   }
   .app-browse-experience{
-    width: 100%;
+    // width: 100%;
     display: flex;
     flex-direction: column;
+    padding: 0 20px;
   }
   .experience-content{
-    width: 100%;
+    // width: 100%; 
     display: flex;
     justify-content: space-around;
-    padding: 8px 0 0 0;
+    // padding: 8px 0 0 0;
+    // padding-top: 10px;
     .ex-item{
       display: flex;
       flex-direction: column;
-      width: 25%;
+      // width: 25%;  
       align-items: center;
       > img{
-        width: 0.8rem;
-        height: 0.8rem;
+        width: 0.7rem;
+        height: 0.7rem;
       }
       > span{
         margin-top: 5px;

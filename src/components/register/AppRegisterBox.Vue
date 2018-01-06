@@ -6,15 +6,16 @@
     <mt-field label="手机号" placeholder="请输入手机号" type="tel"></mt-field>
 
     <mt-field label="验证码" placeholder="请输入验证码">
-      <button class="identifying-code">获取验证码</button>
+      <!-- <button class="identifying-code">获取验证码</button> -->
+      <mt-button type="primary">获取验证码</mt-button>
     </mt-field>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'app-register-box'
-}
+  export default {
+    name: 'app-register-box'
+  }
 </script>
 
 <style lang="scss">

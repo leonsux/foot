@@ -34,13 +34,22 @@
 
 <style lang="scss" >
 .tab-bar{
+  // &:before{
+  //   content: "";
+  //   display: block;
+  //   height: 1px;
+  //   background: red;
+
+  // }
   // position: fixed;
   // bottom: 0;
   width: 100%;
   height: 50px;
   // background: #26A2FF;
-  border-top: 2px, #0ff, solid;
+  // border-top: 2px #0ff solid;
+  box-shadow: 0 -1px 2px #ccc;
   > ul{
+  
     display: flex;
     justify-content: space-around;
     align-items: center;
