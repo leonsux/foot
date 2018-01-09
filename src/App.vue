@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <router-view />
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
     <app-tab-bar></app-tab-bar>
   </div>
 </template>
@@ -15,7 +17,8 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+// @import './styles/app.scss';
 #app {
   height: 100%;
   width: 100%;
@@ -27,5 +30,11 @@ export default {
 }
 .mint-search-list{
   max-height: 300px;
+}
+.mint-header{
+  background: #fff;
+  color: #666;
+  height: 50px;
+  // box-shadow: 0 1px 1px #ccc;
 }
 </style>

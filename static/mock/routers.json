@@ -1,4 +1,7 @@
 {
   "/api/story/stories": "/stories",
-  "/api/collect/collections": "/collections"
+  "/api/collect/collections": "/collections",
+  "/api/browse/hourse": "/hourse",
+  "/api/browse/experience": "/experience",
+  "/api/browse/home_type": "/hometype"
 }

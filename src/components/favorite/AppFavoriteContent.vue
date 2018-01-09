@@ -1,5 +1,9 @@
 <template>
-  <div class="app-favorite-content">
+  <div 
+    class="app-favorite-content"
+    v-infinite-scroll="loadMore"
+    infinite-scroll-disabled="loading"
+    infinite-scroll-distance="10">
     <app-favorite-item v-for="item in collections" :collect="item" :key="item.id"></app-favorite-item>
   </div>
 </template>
@@ -7,6 +11,8 @@
 <script>
   import axios from 'axios'
   import AppFavoriteItem from './AppFavoriteItem'
+  import { Indicator } from 'mint-ui'
+
   export default {
     name: 'app-favorite-content',
     components: {
@@ -14,15 +20,40 @@
     },
     data () {
       return {
-        collections: []
+        collections: [],
+        loading: false
       }
     },
     created () {
-      axios.get('/api/collect/collections')
-        .then(res => {
-          this.collections = res.data.data
-          console.log(this.collections)
+      // this.getFav()
+    },
+    beforeCreate () {
+      Indicator.open({
+        text: '哈吉美妈系带',
+        spinnerType: 'triple-bounce'
+      })
+    },
+    methods: {
+      getFav () {
+        Indicator.open({
+          text: '别急啊！',
+          spinnerType: 'triple-bounce'
         })
+        axios.get('/api/collect/collections')
+          .then(res => {
+            setTimeout(() => {
+              this.collections = this.collections.concat(res.data.data)
+              this.loading = false
+              Indicator.close()
+            }, 500)
+          })
+      },
+      loadMore () {
+        // Indicator.open()
+        console.log('到底不了')
+        this.loading = true
+        this.getFav()
+      }
     }
   }
 </script>

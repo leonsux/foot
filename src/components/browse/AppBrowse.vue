@@ -1,10 +1,12 @@
 <template>
   <div class="app-box app-browse">
     <app-browse-filter></app-browse-filter>
+    <div class="app-browse-content">
+      <app-browse-experience></app-browse-experience>
 
-    <app-browse-experience></app-browse-experience>
+      <app-browse-type></app-browse-type>
+    </div>
 
-    <app-browse-type></app-browse-type>
   </div>
 </template>
 
@@ -28,11 +30,11 @@
     display: flex;
     flex-direction: column;
     flex: 1;
-  }
-  .browse-title{
-    width: 100%;
-    height: 50px;
-    text-align: center;
-    line-height:50px;
+    .app-browse-content{
+      overflow-y: auto;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
   }
 </style>

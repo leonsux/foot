@@ -1,0 +1,37 @@
+{
+  "status_code": 200,
+  "data": [
+    {
+      "type_name": "独立农舍民房型",
+      "post_img": "http://img2.imgtn.bdimg.com/it/u=896618691,4288189605&fm=27&gp=0.jpg",
+      "real_img": "http://img2.imgtn.bdimg.com/it/u=896618691,4288189605&fm=27&gp=0.jpg",
+      "type_detail": "好玩儿~",
+      "type_price": 901,
+      "type_rank": 3.4
+    },
+    {
+      "type_name": "集合住宅型",
+      "post_img": "http://img2.imgtn.bdimg.com/it/u=896618691,4288189605&fm=27&gp=0.jpg",
+      "real_img": "http://img2.imgtn.bdimg.com/it/u=896618691,4288189605&fm=27&gp=0.jpg",
+      "type_detail": "好玩儿~",
+      "type_price": 901,
+      "type_rank": 3.4
+    },
+    {
+      "type_name": "聚落别墅型",
+      "post_img": "http://img0.imgtn.bdimg.com/it/u=1456060875,1635006981&fm=27&gp=0.jpg",
+      "real_img": "http://img0.imgtn.bdimg.com/it/u=1456060875,1635006981&fm=27&gp=0.jpg",
+      "type_detail": "好玩儿~",
+      "type_price": 901,
+      "type_rank": 3.4
+    },
+    {
+      "type_name": "个性化风格民宿",
+      "post_img": "http://img3.imgtn.bdimg.com/it/u=42880263,624608778&fm=27&gp=0.jpg",
+      "real_img": "http://img3.imgtn.bdimg.com/it/u=42880263,624608778&fm=27&gp=0.jpg",
+      "type_detail": "好玩儿~",
+      "type_price": 901,
+      "type_rank": 3.4
+    }
+  ]
+}

@@ -1,6 +1,8 @@
 <template>
   <div class="app-box app-message">
-    消息
+    <mt-header title="">
+      <mt-button class="fa fa-envelope-o" slot="right"></mt-button>
+    </mt-header>
   </div>
 </template>
 
