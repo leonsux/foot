@@ -8,6 +8,8 @@
     <mt-field label="验证码" placeholder="请输入验证码">
       <button class="identifying-code">获取验证码</button>
     </mt-field>
+
+    <mt-button type="primary" size="large">注册</mt-button>
   </div>
 </template>
 
@@ -31,6 +33,11 @@ export default {
         font-size: 16px;
         color:#fff;
       }
+    }
+    .mint-button{
+      width: 90%;
+      margin: 0.5rem auto; 
+      border-radius: 5px;
     }
   }
 </style>
