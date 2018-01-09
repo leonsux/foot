@@ -31,4 +31,10 @@ export default {
 .mint-search-list{
   max-height: 300px;
 }
+.mint-header{
+  background: #fff;
+  color: #666;
+  height: 50px;
+  // box-shadow: 0 1px 1px #ccc;
+}
 </style>
