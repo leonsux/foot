@@ -13,7 +13,7 @@
 <script>
   import Vue from 'vue'
   import axios from 'axios'
-  import { Indicator, Lazyload } from 'mint-ui'
+  import { Indicator, Lazyload, Toast } from 'mint-ui'
 
   Vue.use(Lazyload, {
     preLoad: 1.3,
@@ -26,7 +26,8 @@
     name: 'app-browse-experience',
     data () {
       return {
-        experiences: []
+        experiences: [],
+        source: null
       }
     },
     methods: {
@@ -36,15 +37,21 @@
           this.experiences = res.data.data
           Indicator.close()
         })
+        .catch(res => {
+          Indicator.close()
+          Toast({
+            message: '请求超时！',
+            duration: 1000
+          })
+        })
       }
     },
     mounted () {
       this.getData()
     },
     beforeCreate () {
-      console.log('asfb')
       Indicator.open({
-        text: '哈吉美妈系带',
+        text: '正在加载...',
         spinnerType: 'triple-bounce'
       })
     }

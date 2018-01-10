@@ -14,7 +14,7 @@
 
 <script>
   import axios from 'axios'
-  import { Indicator } from 'mint-ui'
+  import { Indicator, Toast } from 'mint-ui'
   export default {
     name: 'app-browse-type',
     data () {
@@ -30,10 +30,17 @@
             Indicator.close()
           }, 2000)
         })
+        .catch(res => {
+          Indicator.close()
+          Toast({
+            message: '请求超时！',
+            duration: 1000
+          })
+        })
     },
     beforeCreate () {
       Indicator.open({
-        text: '哈吉美妈系带',
+        text: '正在加载...',
         spinnerType: 'triple-bounce'
       })
     }

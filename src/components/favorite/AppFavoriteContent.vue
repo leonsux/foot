@@ -11,7 +11,7 @@
 <script>
   import axios from 'axios'
   import AppFavoriteItem from './AppFavoriteItem'
-  import { Indicator } from 'mint-ui'
+  import { Indicator, Toast } from 'mint-ui'
 
   export default {
     name: 'app-favorite-content',
@@ -24,19 +24,16 @@
         loading: false
       }
     },
-    created () {
-      // this.getFav()
-    },
     beforeCreate () {
       Indicator.open({
-        text: '哈吉美妈系带',
+        text: '正在加载...',
         spinnerType: 'triple-bounce'
       })
     },
     methods: {
       getFav () {
         Indicator.open({
-          text: '别急啊！',
+          text: '加载中...',
           spinnerType: 'triple-bounce'
         })
         axios.get('/api/collect/collections')
@@ -47,10 +44,16 @@
               Indicator.close()
             }, 500)
           })
+          .catch(res => {
+            Indicator.close()
+            Toast({
+              message: '请求超时！',
+              duration: 1000
+            })
+          })
       },
       loadMore () {
         // Indicator.open()
-        console.log('到底不了')
         this.loading = true
         this.getFav()
       }

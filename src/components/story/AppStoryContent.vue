@@ -46,7 +46,7 @@
   import Vue from 'vue'
   import axios from 'axios'
   import AppStoryItem from './AppStoryItem'
-  import { Indicator, Loadmore } from 'mint-ui'
+  import { Indicator, Loadmore, Toast } from 'mint-ui'
 
   Vue.component(Loadmore.name, Loadmore)
 
@@ -64,7 +64,7 @@
     methods: {
       loadTop () {
         // 加载更多数据
-        console.log('hi loadmore')
+        // console.log('hi loadmore')
         this.getData()
         // this.allLoaded = false
         setTimeout(() => {
@@ -83,6 +83,13 @@
               // this.allLoaded = true
             // console.log(res.data.data)
           })
+          .catch(res => {
+            Indicator.close()
+            Toast({
+              message: '请求超时！',
+              duration: 1000
+            })
+          })
       }
     },
     components: {
@@ -100,9 +107,8 @@
       }
     },
     beforeCreate () {
-      console.log('asfb')
       Indicator.open({
-        text: '哈吉美妈系带',
+        text: '正在加载...',
         spinnerType: 'triple-bounce'
       })
     },
