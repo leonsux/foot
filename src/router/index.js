@@ -8,6 +8,10 @@ import AppFavorite from '@/components/favorite/AppFavorite'
 import AppMessage from '@/components/message/AppMessage'
 import AppMine from '@/components/mine/AppMine'
 
+import AppMineLogin from '@/components/mine/login/AppMineLogin'
+import AppMineRegister from '@/components/mine/register/AppMineRegister'
+import AppMinePersonal from '@/components/mine/personal/AppMinePersonal'
+
 Vue.use(Router)
 
 export default new Router({
@@ -35,7 +39,29 @@ export default new Router({
     {
       path: '/mine',
       name: 'AppMine',
-      component: AppMine
+      component: AppMine,
+      children: [
+        {
+          path: '',
+          redirect: '/login',
+          component: AppMineLogin
+        },
+        {
+          path: '/login',
+          name: 'AppMineLogin',
+          component: AppMineLogin
+        },
+        {
+          path: '/register',
+          name: 'AppMineRegister',
+          component: AppMineRegister
+        },
+        {
+          path: '/personal',
+          name: 'AppMinePersonal',
+          component: AppMinePersonal
+        }
+      ]
     }
   ]
 })
