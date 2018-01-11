@@ -2,7 +2,7 @@
   <div class="app-box app-mine">
     
     <!-- 我的 -->
-    <router-view></router-view>
+    <router-view/>
   </div>
 </template>
 

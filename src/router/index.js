@@ -39,11 +39,11 @@ export default new Router({
     {
       path: '/mine',
       name: 'AppMine',
+      redirect: '/login',
       component: AppMine,
       children: [
         {
           path: '',
-          redirect: '/login',
           component: AppMineLogin
         },
         {
