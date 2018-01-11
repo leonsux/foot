@@ -1,7 +1,7 @@
 <template>
   <div class="tab-bar">
     <ul>
-      <router-link :class="{'activeBar': activeBar == item.id ? true : false}"  v-for="item in bars" tag="li" :to="{name: item.name}">
+      <router-link :key="item.id" :class="{'activeBar': activeBar == item.id ? true : false}"  v-for="item in bars" tag="li" :to="{name: item.name}">
         <div @click="activeBar=item.id">
           <i :class="item.ico"></i>
           <span>浏览</span>
