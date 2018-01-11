@@ -1,5 +1,5 @@
 <template>
-  <div class="app-register-header">
+  <div class="app-mine-register-header">
     <mt-header title="注册">
       <router-link to="/" slot="left">
         <i class="fa fa-angle-left"></i>
@@ -10,12 +10,12 @@
 
 <script>
 export default {
-  name: 'app-register-header'
+  name: 'app-mine-register-header'
 }
 </script>
 
 <style lang="scss">
-  .app-register-header{
+  .app-mine-register-header{
     .mint-header{
       height: 50px;
       font-size: 16px;

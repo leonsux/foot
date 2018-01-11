@@ -1,25 +1,9 @@
 <template>
   <div class="tab-bar">
     <ul>
-      <router-link tag="li" :to="{name: 'AppBrowse'}">
-        <i class="fa fa-bandcamp"></i>
-        <span>浏览</span>
-      </router-link>
-      <router-link tag="li" :to="{name: 'AppStory'}">
-        <i class="fa fa-tripadvisor"></i>
-        <span>故事</span>
-      </router-link>
-      <router-link tag="li" :to="{name: 'AppFavorite'}">
-        <i class="fa fa-heart-o"></i>
-        <span>收藏</span>
-      </router-link>
-      <router-link tag="li" :to="{name: 'AppMessage'}">
-        <i class="fa fa-send-o"></i>
-        <span>消息</span>
-      </router-link>
-      <router-link tag="li" :to="{name: 'AppMine'}">
-        <i class="fa fa-user-o"></i>
-        <span>我的</span>
+      <router-link :class="{'activeBar': activeBar == item.id ? true : false}"  v-for="item in bars" tag="li" :to="{name: item.name}">
+        <i :class="item.ico"></i>
+        <span @click="activeBar=item.id">浏览</span>
       </router-link>
     </ul>
   </div>
@@ -28,7 +12,19 @@
 <script>
   
   export default {
-    name: 'app-tab-bar'
+    name: 'app-tab-bar',
+    data () {
+      return {
+        bars: [
+          {name: 'AppBrowse', ico: 'fa fa-bandcamp', id: 0},
+          {name: 'AppStory', ico: 'fa fa-tripadvisor', id: 1},
+          {name: 'AppFavorite', ico: 'fa fa-heart-o', id: 2},
+          {name: 'AppMessage', ico: 'fa fa-send-o', id: 3},
+          {name: 'AppMine', ico: 'fa fa-user-o', id: 4}
+        ],
+        activeBar: 0
+      }
+    }
   }
 </script>
 
@@ -66,8 +62,11 @@
       border: 0;
     }
   }
-  .router-link-exact-active{
-    color: #26A2FF;
+  // .router-link-exact-active{
+  //   color: #26A2FF;
+  // }
+  .activeBar{
+    color: red;
   }
 }
 </style>
