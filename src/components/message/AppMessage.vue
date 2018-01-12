@@ -1,7 +1,6 @@
 <template>
   <div class="app-box app-message">
-    <mt-header title="">
-      <mt-button class="fa fa-envelope-o" slot="right"></mt-button>
+    <mt-header title="消息">
     </mt-header>
     
     <app-message-content></app-message-content>
@@ -28,5 +27,6 @@
   .app-message{
     display: flex;
     flex-direction: column;
+    font-size: 14px;
   }
 </style>
