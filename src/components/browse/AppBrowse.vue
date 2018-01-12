@@ -30,6 +30,8 @@
     display: flex;
     flex-direction: column;
     flex: 1;
+    
+    padding: 0 10px;
     .app-browse-content{
       overflow-y: auto;
       &::-webkit-scrollbar {

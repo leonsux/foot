@@ -51,7 +51,7 @@
   .app-browse-type{
     display: flex;
     flex-direction: column; 
-    padding: 20px;
+    // padding: 20px;
   }
   .type-content{
     text-align: center;

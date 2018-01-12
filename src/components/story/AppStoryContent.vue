@@ -123,9 +123,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    .mint-navbar{
-      margin-bottom: 10px;
-    }
+
     .mint-tab-container{
       flex: 1;
     }

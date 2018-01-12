@@ -1,7 +1,7 @@
 <template>
   <div class="app-box app-favorite">
     <mt-header title="收藏">
-      <mt-button icon="more" slot="right"></mt-button>
+      
     </mt-header>
 
     <app-favorite-content></app-favorite-content>

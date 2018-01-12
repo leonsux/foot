@@ -60,7 +60,7 @@
 
 <style lang="scss">
   .browse-title{
-    margin: 50px 0 30px 0;
+    margin: 30px 0 30px 0;
     // margin-top: 50px;
     font-weight: 400;
   }
@@ -68,7 +68,7 @@
     // width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 0 20px;
+    // padding: 0 20px;
   }
   .experience-content{
     // width: 100%; 
@@ -82,8 +82,8 @@
       // width: 25%;  
       align-items: center;
       > img{
-        width: 0.7rem;
-        height: 0.7rem;
+        width: 0.83rem;
+        height: 0.55rem;
       }
       > span{
         margin-top: 5px;
