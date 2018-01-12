@@ -24,6 +24,7 @@ export default {
   width: 100%;
   display: flex;
   flex-direction: column;
+  background: #f5f5f5;
 }
 .mint-search{
   height: auto;

@@ -33,8 +33,12 @@
 
 <style lang="scss" >
 .tab-bar{
+  // position: absolute;
+  // bottom: 0;
+  // left: 0;
   width: 100%;
   height: 50px;
+  background: #fff;
   box-shadow: 0 -1px 2px #ccc;
   > ul{
   
@@ -54,7 +58,7 @@
       }
     }
   }
-  .activeBar{
+  .activeBar, .router-link-exact-active{
     color: red;
   }
 }

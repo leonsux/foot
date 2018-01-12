@@ -42,14 +42,15 @@ $lgray: #ddd;
     flex-direction: column;
     float: left;
     // border: 1px solid red;
-    // margin: 0.05rem;
+    margin-top: 10px;
     .story-item-content{
       width: 1.68rem;
       // background: #26A2FF;
       margin: 0 auto;
       > img{
-        width: 1.58rem;
-        height: 1.58rem;
+        width: 1.73rem;
+        height: 1.3rem;
+        border-radius: 5px;
       }
       padding: 5px;
       .story-preview{

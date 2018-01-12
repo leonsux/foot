@@ -17,8 +17,8 @@
     width: 100px;
     // width: 40px;
     height: 40px;
-    background: #26A2FF;
-    bottom: 5px;
+    background: #fff;
+    bottom: 15px;
     left: 50%;
     transform: translateX(-50%);
     text-align:center;
@@ -28,6 +28,5 @@
     // font-size: 2em;
     border: 1px solid #ccc;
     box-shadow: 0 1px 1px #ccc;
-    opacity: 0.9;
   }
 </style>

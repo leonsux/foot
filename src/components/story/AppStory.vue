@@ -3,7 +3,7 @@
     <!-- 搜索 -->
     <div class="story-search">
       <div class="search-box">
-        <span><i class="search-icon fa fa-search"></i><span>带你去旅行</span></span>
+        <span><i class="search-icon fa fa-search"></i><span>搜索</span></span>
       </div>
     </div>
     <!-- 内容 -->
@@ -40,9 +40,34 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    // padding: 20px;
+    // padding: 10px 10px 0;
     .story-search{
-      padding: 20px;
+      padding: 10px;
+      background: #fff;
+
     }
+  }
+  .mint-navbar{
+    border-bottom: 1px solid #cacaca;
+  }
+  .mint-navbar .mint-tab-item{
+    height: 100%;
+    padding: 0;
+    height: 40px;
+    line-height: 40px;
+  }
+  .mint-navbar .mint-tab-item.is-selected{
+    color: #009d25;
+    border: none;
+    .mint-tab-item-label{
+      
+      border-bottom: 2px solid #009d25;
+    }
+  }
+  .mint-tab-item-label{
+    display: inline-block;
+    height: 28px;
+    line-height: 28px;
+    font-size: 14px;
   }
 </style>

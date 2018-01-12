@@ -44,11 +44,12 @@
 <style lang="scss">
   @import '../../styles/app.scss';
   .app-favorite-item{
-    padding: 10px;
+    // padding: 10px;
     .favorite-img{
       > img{
+        border-radius: 0;
         width: 100%;
-        height: 2.2rem;
+        height: 2.5rem;
       }
     }
     .favorite-info{
