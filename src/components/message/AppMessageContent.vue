@@ -18,10 +18,8 @@
     data () {
       return {
         messages: [
-          {sender: 'leon', content: '来玩呀~'},
-          {sender: 'jack', content: '快活啊~'},
-          {sender: 'tim', content: '大把时光~'},
-          {sender: 'tim', content: '大把时光~'}
+          {type: 'system', title: '系统通知', content: '传统聚会方式已经out啦，包大HOUSE开趴才是正经事！人均更低呦'},
+          {type: 'sales', title: '优惠促销', content: '"佛系青年"应该住怎样的民宿？'}
         ]
       }
     },
@@ -37,8 +35,8 @@
 <style lang="scss">
   .app-message-content{
     height: 100%;
-    padding: 20px;
     overflow-y: auto;
+    margin-top: 15px;
   }
   .app-message-content::-webkit-scrollbar {
     display: none;

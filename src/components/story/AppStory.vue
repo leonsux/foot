@@ -54,7 +54,7 @@
     height: 100%;
     padding: 0;
     height: 40px;
-    line-height: 40px;
+    // line-height: 40px;
   }
   .mint-navbar .mint-tab-item.is-selected{
     color: #009d25;
@@ -66,8 +66,9 @@
   }
   .mint-tab-item-label{
     display: inline-block;
-    height: 28px;
-    line-height: 28px;
+    height: 15px;
+    padding: 10px 0;
+    // line-height: 28px;
     font-size: 14px;
   }
 </style>
