@@ -1,18 +1,28 @@
 <template>
   <div class="app-mine-login-box">
-      <div class="login-con">
+      <div class="login-ico">
+        <p>用户名</p>
         <div class="login">
-          用户名：<input  type="text" placeholder="请输入ID/邮箱/手机号">  
-      </div>
-      <div class="login-password">
-          密码：<input  type="password" placeholder="密码">
-      </div>
-      <button class="login-btn" type="submit" >登&nbsp;录</button>
-      <div class="auto">
-        <span><input type="checkbox" >自动登录</span>
-        <router-link :to="{name: 'AppMineRegister'}">免费注册</router-link>
-        <router-view></router-view>
-      </div>
+          <i class="fa fa-user-o"></i>
+          <input type="number" class="tel" placeholder="请输入手机号"/>
+        </div>
+        <p>密码</p>
+        <div class="login">
+          <i class="iconfont icon-pwd">&#xe603;</i>
+          <input type="password" class="pwd" placeholder="请输入密码"/>
+          <i class="iconfont icon-eye">&#xe61d;</i>
+        </div>
+        <div class="auto">
+          <span><input type="checkbox" >&nbsp;&nbsp;记住密码</span>
+          <span><input type="checkbox" >&nbsp;&nbsp;自动登录</span>
+        </div>
+        <button class="login-btn" type="submit" >登录</button>
+        <div class="re-links">
+          <router-link :to="{name: 'AppMineRegister'}">忘记密码？</router-link>
+          <router-view></router-view>
+          <router-link :to="{name: 'AppMineRegister'}">新用户注册</router-link>
+          <router-view></router-view>
+        </div>
       </div>
   </div>
 </template>
@@ -28,32 +38,57 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .app-mine-login-box{
-
-        width: 100%;
-        .login-con{
-            width: 90%;
-            margin: auto;
-        }
-        .login,.login-password{
-            color: #666;
-            line-height: 32px;
+    .app-mine-login-box{    
+       margin-top: 0.18rem;
+       color:#333;
+       font-size: 16px;
+        .login-ico{
+          width: 3.3rem;
+          margin: 0 auto;
+          p {
+              padding:0.12rem 0rem;
+          }
+          .login {
             display: flex;
-            padding: 15px;
-            margin-top: 5px;
-            justify-content: space-around;
-            input{
-                padding-left:5px;
-                border: 1px solid #DFDFDF;
-                height: 30px;
-                width: 247px;
+            justify-content: space-between;
+            height: 0.44rem;
+            border-radius: 5px;
+            margin-bottom:0.12rem;
+            i {
+                display: block;
+                width:0.44rem;
+                height: 0.44rem;
+                line-height: 0.41rem;
+                text-align: center;
+                background: #fff;
+                border-right: 1px solid #E5E5E5;
+                font-size: 26px;
+                color:#999;
             }
-        }
-        button{
+            .icon-eye{
+                padding-right:5px;
+            }
+            input {
+                width:3.21rem;
+                height:100%;
+                font-size: 12px;
+                padding-left:0.1rem;
+                border:none;
+            }
+            .pwd{
+                width:2.52rem;
+            }
+          }
+          .auto {
+              display: flex;
+              justify-content: space-between;
+              height:0.3rem;
+          }
+          button{
             display: block;
             height:40px;
             font-size: 16px;
-            background: #FF2233;
+            background: #FF3D84;
             border: none;
             border-radius: 5px;
             color: #fff;
@@ -61,14 +96,16 @@ export default {
             line-height: 40px;
             margin: auto;
         }
-        .auto{
+        .re-links{
             display: flex;
             justify-content: space-between;
-            margin-top:20px;
             a{
-                color: #5790bb;
+              color:#FF3D84;
+              padding-top: 0.1rem;
             }
+            
         }
+      }
         
     }
 

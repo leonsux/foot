@@ -1,6 +1,6 @@
 <template>
-  <div class="app-mine-register-header">
-    <mt-header title="新用户注册">
+  <div class="app-mine-login-header">
+    <mt-header title="登录">
       <router-link to="/" slot="left">
       </router-link>
     </mt-header> 
@@ -9,12 +9,12 @@
 
 <script>
 export default {
-  name: 'app-mine-register-header'
+  name: 'app-mine-login-header'
 }
 </script>
 
 <style lang="scss">
-  .app-mine-register-header{
+  .app-mine-login-header{
     .mint-header{
       height: 86px;
       font-size: 16px;
