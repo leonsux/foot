@@ -2,7 +2,7 @@
   <div class="filters">
     <!-- <div class="browse-title">地区搜索</div> -->
     <!-- <mt-header title="地区搜索"></mt-header> -->
-    <div class="search-box">
+    <div class="search-box" >
       <span><i class="search-icon fa fa-search"></i><span>搜索目的地</span></span>
     </div>
     <!--  enter-active-class="animated slideInDown" leave-active-class="animated slideOutUp" -->
@@ -24,6 +24,11 @@
         value: '',
         isSlide: false,
         mTop: 10
+      }
+    },
+    methods: {
+      toFilterArea () {
+        this.$router.push('filter-area')
       }
     },
     mounted () {

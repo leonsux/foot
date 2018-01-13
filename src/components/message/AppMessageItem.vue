@@ -38,6 +38,7 @@
       text-align: center;
       line-height: 29px;
       font-size: 24px;
+      color: blue;
     }
     .message-info{
       display: flex;
@@ -46,6 +47,7 @@
       width: 90%;
       > h2{
         font-size: 14px;
+        font-weight: 500;
       }
       > p{
         font-size: 12px;

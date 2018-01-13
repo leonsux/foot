@@ -29,3 +29,12 @@ body{
 img{
   border-radius: 5px;
 }
+
+.toast-box{
+  position: fixed;
+  // z-index: 101;
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+}
+

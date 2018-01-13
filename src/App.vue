@@ -1,14 +1,17 @@
 <template>
   <div id="app">
-    <keep-alive>
+    <!-- <keep-alive :exclude="AppStoryDetail"> -->
       <router-view></router-view>
-    </keep-alive>
+    <!-- </keep-alive> -->
     <app-tab-bar></app-tab-bar>
   </div>
 </template>
 
 <script>
+import './assets/iconfont.css'
 import AppTabBar from './components/tab-bar/AppTabBar'
+
+// import AppStoryDetail from './components/story/AppStoryDetail'
 export default {
   name: 'app',
   components: {
@@ -26,16 +29,9 @@ export default {
   flex-direction: column;
   background: #f5f5f5;
 }
-.mint-search{
-  height: auto;
-}
-.mint-search-list{
-  max-height: 300px;
-}
 .mint-header{
   background: #fff;
   color: #666;
   height: 50px;
-  // box-shadow: 0 1px 1px #ccc;
 }
 </style>

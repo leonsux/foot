@@ -2,7 +2,7 @@
   <div class="app-box app-story">
     <!-- 搜索 -->
     <div class="story-search">
-      <div class="search-box">
+      <div class="search-box" @click="toSearch">
         <span><i class="search-icon fa fa-search"></i><span>搜索</span></span>
       </div>
     </div>
@@ -26,6 +26,11 @@
           {title: '北京', value: '和人'}
         ],
         active: true
+      }
+    },
+    methods: {
+      toSearch () {
+        this.$router.push('/appstorysearch')
       }
     },
     components: {

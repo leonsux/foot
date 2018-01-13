@@ -43,3 +43,6 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 下滑显示，上滑隐藏效果试着做了下，效果不尽人意
 
+### 1.13
+
+在router.js里配置路由时，老是报组件引入错误，仔细检查了一番并没有发现什么错误，之前的都没有问题，最初怀疑是组件命名的问题，但各种尝试无果，最后只好先写别的模块。回头再看这块，又重新写了一遍，发现自己引入模块的时候确实是路径写的有问题，在一个很不起眼的地方：`import AppWriting from '@/components/story/AppWriting'`，这里的`@`是指当前项目的`src`目录，后面接的时候要讲上`/`，而我当时由于疏忽写成了`import AppWriting from '@components/story/AppWriting'`，导致查找组件时的很是路径为：`srccomponents/story/AppWriting`，这样当然找不到了
