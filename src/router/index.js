@@ -12,6 +12,10 @@ import AppExDetail from '@/components/browse/AppExDetail'
 import AppTyDetail from '@/components/browse/AppTyDetail'
 // 筛选日期
 import AppFilteTime from '@/components/browse/AppFilteTime'
+// 筛选人
+import AppFiltePerson from '@/components/browse/AppFiltePerson'
+// 搜索
+import AppFilteSearch from '@/components/browse/AppFilteSearch'
 
 // 故事
 import AppStory from '@/components/story/AppStory'
@@ -58,6 +62,16 @@ export default new Router({
       path: '/AppFilteTime',
       name: 'AppFilteTime',
       component: AppFilteTime
+    },
+    {
+      path: '/AppFiltePerson',
+      name: 'AppFiltePerson',
+      component: AppFiltePerson
+    },
+    {
+      path: '/AppFilteSearch',
+      name: 'AppFilteSearch',
+      component: AppFilteSearch
     },
     {
       path: '/appstory',
