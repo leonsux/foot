@@ -81,6 +81,11 @@
             width: 100%;
           }
         }
+        .story-info-txt{
+          > h2, > p{
+            padding: 10px;
+          }
+        }
       }
     }
   }

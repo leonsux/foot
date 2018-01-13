@@ -4,8 +4,14 @@ import Router from 'vue-router'
 
 // 浏览
 import AppBrowse from '@/components/browse/AppBrowse'
-// filters
-// import AppArea from '@components/browse/AppArea'
+// 体验列表
+import AppExperiences from '@/components/browse/AppExperiences'
+// 体验详情
+import AppExDetail from '@/components/browse/AppExDetail'
+// 民宿类型详情
+import AppTyDetail from '@/components/browse/AppTyDetail'
+// 筛选日期
+import AppFilteTime from '@/components/browse/AppFilteTime'
 
 // 故事
 import AppStory from '@/components/story/AppStory'
@@ -32,6 +38,26 @@ export default new Router({
       path: '/',
       name: 'AppBrowse',
       component: AppBrowse
+    },
+    {
+      path: '/Appexperiences',
+      name: 'AppExperiences',
+      component: AppExperiences
+    },
+    {
+      path: '/AppExDetail',
+      name: 'AppExDetail',
+      component: AppExDetail
+    },
+    {
+      path: '/AppTyDetail',
+      name: 'AppTyDetail',
+      component: AppTyDetail
+    },
+    {
+      path: '/AppFilteTime',
+      name: 'AppFilteTime',
+      component: AppFilteTime
     },
     {
       path: '/appstory',

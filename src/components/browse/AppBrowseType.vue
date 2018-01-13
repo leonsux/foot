@@ -4,8 +4,8 @@
     <!-- <mt-header title="民宿类型"></mt-header> -->
     <h1 class="browse-title">民宿类型</h1>
     <div class="type-content">
-      <div class="ty-item" v-for="item in types">
-        <img :src="item.post_img" alt="item.type_name">
+      <div @click="toTyDetail(item)" class="ty-item" v-for="item in types">
+        <img :src="item.post_img" title="item.type_name">
         <span>{{item.type_name}}</span>
       </div>
     </div>
@@ -20,6 +20,15 @@
     data () {
       return {
         types: []
+      }
+    },
+    methods: {
+      toTyDetail (item) {
+        this.$router.push({
+          path: '/',
+          name: 'AppTyDetail',
+          params: {item}
+        })
       }
     },
     mounted () {
@@ -58,13 +67,23 @@
     // overflow-y: auto;
     .ty-item{
       display: inline-block;
-      width: 40%;
-      margin: 5% 5% 0 5%;
+      width: 48%;
+      // margin: 0 2% 5% 2%;
+      margin-bottom: 5%;
       > img{
         width: 100%;
         height: 1rem;
         margin-bottom: 5px;
       }
+      > span{
+        color: #666;
+      }
     }
+  }
+  .ty-item:nth-of-type(even){
+    margin-left: 2%;
+  }
+  .ty-item:nth-of-type(odd){
+    margin-right: 2%;
   }
 </style>

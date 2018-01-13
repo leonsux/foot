@@ -4,12 +4,6 @@
       <router-link to="/appstory" slot="left">
         <mt-button icon="back">返回</mt-button>
       </router-link>
-      <!-- <router-link to="/appstory" slot="right">
-        <mt-button>链接</mt-button>
-      </router-link>
-      <router-link to="/appstory" slot="right">
-        <mt-button>心愿单</mt-button>
-      </router-link> -->
     </mt-header>
     <div class="write-area">
       <textarea name="" id="" cols="30" rows="10"></textarea>

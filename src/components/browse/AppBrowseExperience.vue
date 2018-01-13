@@ -2,7 +2,7 @@
   <div class="app-browse-experience">
     <h1 class="browse-title">体验</h1>
     <div class="experience-content">
-      <div class="ex-item" v-for="item in experiences" :key="item.id">
+      <div @click="toExperiences(item.type)" class="ex-item" v-for="item in experiences" :key="item.id">
         <img :src="item.experience_img" :alt="item.experience_location">
         <span>{{item.type}}</span>
       </div>
@@ -44,6 +44,13 @@
             duration: 1000
           })
         })
+      },
+      toExperiences (type) {
+        this.$router.push({
+          path: '/',
+          name: 'AppExperiences',
+          params: {type}
+        })
       }
     },
     mounted () {
@@ -60,9 +67,11 @@
 
 <style lang="scss">
   .browse-title{
-    margin: 30px 0 30px 0;
+    margin: 30px 0 10px 0;
     // margin-top: 50px;
     font-weight: 400;
+    color: #333;
+    font-size: 18px;
   }
   .app-browse-experience{
     // width: 100%;
@@ -87,6 +96,7 @@
       }
       > span{
         margin-top: 5px;
+        color: #666;
       }
     }
   }

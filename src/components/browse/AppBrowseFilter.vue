@@ -8,7 +8,7 @@
     <!--  enter-active-class="animated slideInDown" leave-active-class="animated slideOutUp" -->
     <transition> 
       <div class="filter-tag" :style="{'margin-top': mTop+'px'}" v-show="!isSlide">
-        <button size="small" type="default">所有日期</button>
+        <button @click="toFilteTime" size="small" type="default">所有日期</button>
         <button size="small" type="default">房客</button>
         <button size="small" type="default">筛选条件</button>
       </div>
@@ -29,6 +29,9 @@
     methods: {
       toFilterArea () {
         this.$router.push('filter-area')
+      },
+      toFilteTime () {
+        this.$router.push('/AppFilteTime')
       }
     },
     mounted () {
@@ -51,6 +54,7 @@
         border: 1px solid #cccaca;
         border-radius: 5px;
         font-size: 14px;
+        color: #666;
       }
     }
   }
