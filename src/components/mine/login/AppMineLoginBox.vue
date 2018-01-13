@@ -46,7 +46,7 @@ export default {
           width: 3.3rem;
           margin: 0 auto;
           p {
-              padding:0.12rem 0rem;
+            padding:0.12rem 0rem;
           }
           .login {
             display: flex;
@@ -55,34 +55,34 @@ export default {
             border-radius: 5px;
             margin-bottom:0.12rem;
             i {
-                display: block;
-                width:0.44rem;
-                height: 0.44rem;
-                line-height: 0.41rem;
-                text-align: center;
-                background: #fff;
-                border-right: 1px solid #E5E5E5;
-                font-size: 26px;
-                color:#999;
+              display: block;
+              width:0.44rem;
+              height: 0.44rem;
+              line-height: 0.41rem;
+              text-align: center;
+              background: #fff;
+              border-right: 1px solid #E5E5E5;
+              font-size: 26px;
+              color:#999;
             }
             .icon-eye{
-                padding-right:5px;
+              padding-right:5px;
             }
             input {
-                width:3.21rem;
-                height:100%;
-                font-size: 12px;
-                padding-left:0.1rem;
-                border:none;
+              width:3.21rem;
+              height:100%;
+              font-size: 12px;
+              padding-left:0.1rem;
+              border:none;
             }
             .pwd{
                 width:2.52rem;
             }
           }
           .auto {
-              display: flex;
-              justify-content: space-between;
-              height:0.3rem;
+            display: flex;
+            justify-content: space-between;
+            height:0.3rem;
           }
           button{
             display: block;

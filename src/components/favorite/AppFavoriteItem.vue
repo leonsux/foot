@@ -2,6 +2,8 @@
   <div class="app-favorite-item">
     <div class="favorite-img">
       <img v-lazy="collect.collect_img" alt="">
+      <img class="like-ico" src="/static/imgs/like.png" alt="">
+      <img class="user-head" :src="collect.user_img" alt="">
     </div>
     <div class="favorite-info">
       <p class="fav-type">{{collect.hourse_type}}</p>
@@ -42,24 +44,42 @@
 </script>
 
 <style lang="scss">
-  @import '../../styles/app.scss';
+  // @import '../../styles/app.scss';
   .app-favorite-item{
-    // padding: 10px;
+    margin-top: 10px;
     .favorite-img{
+      position: relative;
       > img{
         border-radius: 0;
         width: 100%;
         height: 2.5rem;
       }
+      .like-ico{
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        right: 10px;
+        top: 20px;
+      }
+      .user-head{
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        bottom: 0;
+        right: 10px;
+        border-radius: 50%;
+        transform: translateY(50%)
+      }
     }
     .favorite-info{
-      padding: 10px;
+      padding: 5px 10px 0;
       .fav-type{
         font-size: 16px;
       }
       .fav-rank{
-        color: $lred;
+        color: red;
       }
     }
+
   }
 </style>

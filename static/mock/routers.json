@@ -3,5 +3,6 @@
   "/api/collect/collections": "/collections",
   "/api/browse/hourse": "/hourse",
   "/api/browse/experience": "/experience",
+  "/api/browse/experiencelist": "/experiencelist",
   "/api/browse/home_type": "/hometype"
 }

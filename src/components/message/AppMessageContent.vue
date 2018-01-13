@@ -18,8 +18,8 @@
     data () {
       return {
         messages: [
-          {type: 'system', title: '系统通知', content: '传统聚会方式已经out啦，包大HOUSE开趴才是正经事！人均更低呦'},
-          {type: 'sales', title: '优惠促销', content: '"佛系青年"应该住怎样的民宿？'}
+          {type: 'system', imgUrl: '/static/imgs/tz.png', title: '系统通知', content: '传统聚会方式已经out啦，包大HOUSE开趴才是正经事！人均更低呦'},
+          {type: 'sales', imgUrl: '/static/imgs/cx.png', title: '优惠促销', content: '"佛系青年"应该住怎样的民宿？'}
         ]
       }
     },

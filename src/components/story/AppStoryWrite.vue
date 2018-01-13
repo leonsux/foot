@@ -1,5 +1,5 @@
 <template>
-  <div class="app-box app-story-write">
+  <div @click="toWrite" class="app-box app-story-write">
     <i class="fa fa-edit"></i>
     写故事
   </div>
@@ -7,7 +7,12 @@
 
 <script>
   export default {
-    name: 'app-story-write'
+    name: 'app-story-write',
+    methods: {
+      toWrite () {
+        this.$router.push('/appwriting')
+      }
+    }
   }
 </script>
 

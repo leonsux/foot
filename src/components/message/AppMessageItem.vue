@@ -1,6 +1,6 @@
 <template>
   <div class="app-message-item">
-    <div class="message-ico"><i class="fa fa-volume-up"></i></div>
+    <div class="message-ico"><!-- <i class="fa fa-volume-up"> --><img :src="message.imgUrl" alt=""></i></div>
     <div class="message-info">
       <h2>{{message.title}}</h2>
       <p>{{message.content}}</p>
@@ -38,6 +38,11 @@
       text-align: center;
       line-height: 29px;
       font-size: 24px;
+      color: blue;
+      > img{
+        width: 29px;
+        height: 29px;
+      }
     }
     .message-info{
       display: flex;
@@ -46,6 +51,7 @@
       width: 90%;
       > h2{
         font-size: 14px;
+        font-weight: 500;
       }
       > p{
         font-size: 12px;

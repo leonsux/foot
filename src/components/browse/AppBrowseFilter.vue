@@ -2,14 +2,14 @@
   <div class="filters">
     <!-- <div class="browse-title">地区搜索</div> -->
     <!-- <mt-header title="地区搜索"></mt-header> -->
-    <div class="search-box">
+    <div class="search-box" @click="toFilteSearch">
       <span><i class="search-icon fa fa-search"></i><span>搜索目的地</span></span>
     </div>
     <!--  enter-active-class="animated slideInDown" leave-active-class="animated slideOutUp" -->
     <transition> 
       <div class="filter-tag" :style="{'margin-top': mTop+'px'}" v-show="!isSlide">
-        <button size="small" type="default">所有日期</button>
-        <button size="small" type="default">房客</button>
+        <button @click="toFilteTime" size="small" type="default">所有日期</button>
+        <button size="small" type="default"  @click="toFiltePerson">房客</button>
         <button size="small" type="default">筛选条件</button>
       </div>
     </transition>
@@ -24,6 +24,20 @@
         value: '',
         isSlide: false,
         mTop: 10
+      }
+    },
+    methods: {
+      toFilterArea () {
+        this.$router.push('filter-area')
+      },
+      toFilteTime () {
+        this.$router.push('/AppFilteTime')
+      },
+      toFiltePerson () {
+        this.$router.push('/AppFiltePerson')
+      },
+      toFilteSearch () {
+        this.$router.push('/AppFilteSearch')
       }
     },
     mounted () {
@@ -46,6 +60,7 @@
         border: 1px solid #cccaca;
         border-radius: 5px;
         font-size: 14px;
+        color: #666;
       }
     }
   }

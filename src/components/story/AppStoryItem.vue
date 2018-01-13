@@ -1,11 +1,12 @@
 <template>
-  <div class="app-box app-story-item">
+  <div class="app-box app-story-item" @click="toDetail">
     <div class="story-item-content">
       <img :src="story.imgUrl" alt="">
       <div class="story-preview">
         <!-- <i class="fa fa-plus"></i> -->
         <!-- 带你去旅行，去吃饭 -->
         <div>
+          <img class="user-img" :src="story.userImg" alt="">
           <b class="story-site">{{story.site}}</b>
           <b>{{story.title}}</b>
         </div>
@@ -21,11 +22,22 @@
 <script>
   export default {
     name: 'app-story-item',
-    props: ['story']
+    props: ['story'],
+    methods: {
+      toDetail () {
+        this.$router.push({
+          path: 'appstory',
+          name: 'AppStoryDetail',
+          params: {
+            detail: this.story
+          }
+        })
+      }
+    }
   }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 $dblue: #5FD9CD;
 $lyellow: #EAF786;
 $lred: #FFB5A1;
@@ -64,6 +76,11 @@ $lgray: #ddd;
         .story-site{
           font-size: 1.2em;
           // color: #fff;
+        }
+        .user-img{
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
         }
       }
     }
