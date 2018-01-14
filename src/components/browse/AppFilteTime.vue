@@ -13,16 +13,6 @@
       <mt-field label="结束日期" placeholder="请输入" type="date" v-model="endTime"></mt-field>
       <mt-button class="set-ok-btn" @click="setDurationOk(startTime, endTime)" type="primary">设置好了</mt-button>
     </div>
-
-    <!-- <mt-datetime-picker
-      ref="picker"
-      @confirm="handleConfirm"
-      type="date"
-      :startDate="new Date()"
-      year-format="{value} 年"
-      month-format="{value} 月"
-      date-format="{value} 日">
-    </mt-datetime-picker> -->
   </div>
 </template>
 
@@ -36,8 +26,8 @@
     name: 'app-filte-time',
     data () {
       return {
-        startTime: '',
-        endTime: ''
+        startTime: new Date().toString(),
+        endTime: '哈哈'
       }
     },
     methods: {
@@ -46,6 +36,14 @@
         this.setDuration({startTime, endTime})
         this.$router.push('/')
       }
+    },
+    mounted () {
+      let date = new Date()
+      let month = date.getMonth() + 1
+      let day = date.getDate()
+      date = date.getFullYear() + '-' + (month < 10 ? '0' : '') + month + (day < 10 ? '-0' : '-') + day
+      this.startTime = date
+      this.endTime = date
     }
   }
 </script>
@@ -58,5 +56,12 @@
   }
   .set-ok-btn{
     margin: 10px;
+  }
+  .mint-cell-value{
+    position: relative;
+    > input{
+      background: transparent; 
+      opacity: 0.5;
+    }
   }
 </style>

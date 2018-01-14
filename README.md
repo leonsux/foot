@@ -101,4 +101,15 @@ searchStart (key) {
 ![搜索中](http://upload-images.jianshu.io/upload_images/3629578-7f3f261be2836cef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ![搜索失败](http://upload-images.jianshu.io/upload_images/3629578-3943c8a0b5fce21b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+日期控件`<input type="date">`设置默认日期时的注意点
+
+一定要是严格的`yyy-mmm-ddd`字符串形式，如`2018-02-09`
+
+```
+<input id="time" type="date">
+<script>
+  time.value = '2018-01-14'
+</script>
+```
+
 
