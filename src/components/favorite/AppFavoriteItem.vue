@@ -1,7 +1,7 @@
 <template>
   <div class="app-favorite-item">
     <div class="favorite-img">
-      <img v-lazy="collect.collect_img" alt="">
+      <img v-lazy="collect.collect_img" alt="" :title="collect.hourse_type">
       <img class="like-ico" src="/static/imgs/like.png" alt="">
       <img class="user-head" :src="collect.user_img" alt="">
     </div>

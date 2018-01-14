@@ -17,12 +17,12 @@
           <img :src="detail.userImg" alt="">
           <div>
             <span>{{detail.userName}}</span>
-            <span>{{detail.site}}</span>
           </div>
-          <span>昨天</span>
+            <span style="color: #5FD9CD"><i class="fa fa-map-marker"></i>{{detail.site}}</span>
+          <!-- <span>昨天</span> -->
         </div>
         
-        <button>关注</button>
+        <mt-button @click="changeMind" :type="!likeHe ? 'danger' : 'default'" size="small"><i :class="!likeHe ? 'fa fa-plus' : 'fa fa-check'"></i>&nbsp;{{likeHe ? '取关' : '关注'}}</mt-button>
       </div>
       <div class="story-info-middle">
         <div class="story-info-imgs">
@@ -39,15 +39,29 @@
 </template>
 
 <script>
+  import { MessageBox } from 'mint-ui'
   export default {
     name: 'app-story-detail',
     data () {
       return {
-        detail: {}
+        detail: {},
+        likeHe: false
+      }
+    },
+    methods: {
+      changeMind () {
+        if (this.likeHe) {
+          MessageBox.confirm('不喜欢TA了吗?', '')
+          .then(res => {
+            this.likeHe = !this.likeHe
+          }).catch(() => {
+          })
+        } else {
+          this.likeHe = !this.likeHe
+        }
       }
     },
     created () {
-      console.log(this.$route)
       this.detail = this.$route.params.detail
     }
   }
@@ -59,6 +73,7 @@
       display: flex;
       flex-direction: column;
       .story-info-top{
+        padding: 5px 10px;
         display: flex;
         justify-content: space-between;
         .story-top-left{
@@ -72,6 +87,8 @@
           > div{
             display: flex;
             flex-direction: column;
+            margin: 0 5px;
+            font-size: 16px;
           }
         }
       }
