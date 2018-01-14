@@ -8,7 +8,7 @@
     <!--  enter-active-class="animated slideInDown" leave-active-class="animated slideOutUp" -->
     <transition> 
       <div class="filter-tag" :style="{'margin-top': mTop+'px'}" v-show="!isSlide">
-        <button @click="toFilteTime" size="small" type="default">所有日期</button>
+        <button :class="{'selectedTag': durationToStr === '所有日期' ? false : true}" @click="toFilteTime" size="small" type="default">{{durationToStr}}</button>
         <button size="small" type="default"  @click="toFiltePerson">房客</button>
         <button size="small" type="default">筛选条件</button>
       </div>
@@ -17,6 +17,7 @@
 </template>
 
 <script>
+  import { mapGetters } from 'vuex'
   export default {
     name: 'app-browse-filter',
     data () {
@@ -25,6 +26,9 @@
         isSlide: false,
         mTop: 10
       }
+    },
+    computed: {
+      ...mapGetters(['durationToStr'])
     },
     methods: {
       toFilterArea () {
@@ -53,7 +57,7 @@
     .filter-tag{
       margin-top: 10px;
       > button{
-        height: 22px;
+        height: 26px;
         line-height: 22px;
         padding: 0 9px;
         background: #f5f5f5;
@@ -61,6 +65,10 @@
         border-radius: 5px;
         font-size: 14px;
         color: #666;
+      }
+      .selectedTag{
+        background: #98FB98;
+        color: #fff;
       }
     }
   }
