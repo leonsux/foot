@@ -9,8 +9,8 @@
     <transition> 
       <div class="filter-tag" :style="{'margin-top': mTop+'px'}" v-show="!isSlide">
         <button :class="{'selectedTag': durationToStr === '所有日期' ? false : true}" @click="toFilteTime" size="small" type="default">{{durationToStr}}</button>
-        <button size="small" type="default"  @click="toFiltePerson">房客</button>
-        <button size="small" type="default">筛选条件</button>
+        <button :class="{'selectedTag': personsToStr.str === '房客' ? false : true}" size="small" type="default"  @click="toFiltePerson(personsToStr.persons)">{{personsToStr.str}}</button>
+        <!-- <button size="small" type="default">筛选条件</button> -->
       </div>
     </transition>
   </div>
@@ -28,7 +28,7 @@
       }
     },
     computed: {
-      ...mapGetters(['durationToStr'])
+      ...mapGetters(['durationToStr', 'personsToStr'])
     },
     methods: {
       toFilterArea () {
@@ -37,8 +37,12 @@
       toFilteTime () {
         this.$router.push('/AppFilteTime')
       },
-      toFiltePerson () {
-        this.$router.push('/AppFiltePerson')
+      toFiltePerson (persons) {
+        this.$router.push({
+          path: '/',
+          name: 'AppFiltePerson',
+          params: persons
+        })
       },
       toFilteSearch () {
         this.$router.push('/AppFilteSearch')
@@ -52,8 +56,6 @@
 <style lang="scss">
   .filters{
     padding-top: 10px;
-    // padding: 10px 10px 20px;
-    // box-shadow: 0 1px 1px #ccc;
     .filter-tag{
       margin-top: 10px;
       > button{

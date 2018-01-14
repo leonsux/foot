@@ -64,3 +64,41 @@ mint-ui之datePicker
   date-format="{value} 日">
 </mt-datetime-picker>
 ```
+
+### 1.14
+
+封装了一个搜索框插件
+
+使用方法：
+
+引入组件，在页面中添加`<search-bar :hotSites="hotSites" :histories="histories"></search-bar>`
+
+两个传参分别为热门搜索和搜索历史
+
+效果：
+
+输入框值实时匹配可能要搜的值
+
+点击搜索结果列表，弹出搜索中动画（mint-ui的动画），搜索失败弹出提示，可以在`searchStart`中进行自定义操作
+
+```
+searchStart (key) {
+  Indicator.open({
+    text: '搜索“' + key + '”',
+    spinnerType: 'triple-bounce'
+  })
+  setTimeout(() => {
+    Indicator.close()
+    Toast({
+      message: '网络好像有点问题~',
+      duration: 1000
+    })
+  }, 2000)
+}
+```
+
+![输入关键词](http://upload-images.jianshu.io/upload_images/3629578-d575b65ef4fdcfd0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![搜索中](http://upload-images.jianshu.io/upload_images/3629578-7f3f261be2836cef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![搜索失败](http://upload-images.jianshu.io/upload_images/3629578-3943c8a0b5fce21b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+

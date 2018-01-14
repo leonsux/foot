@@ -16,9 +16,9 @@
   import { Indicator, Lazyload, Toast } from 'mint-ui'
 
   Vue.use(Lazyload, {
-    preLoad: 1.3,
+    preLoad: 2,
     error: 'dist/error.png',
-    loading: 'https://file.digitaling.com/eImg/uimages/20150907/1441607667921515.gif',
+    loading: '/static/imgs/loadImg.gif',
     attempt: 1
   })
 

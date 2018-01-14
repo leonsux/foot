@@ -42,6 +42,7 @@
     .write-area{
       height: 100%;
       > textarea{
+        padding: 0 20px;
         width: 100%;
         height: 100%;
       }

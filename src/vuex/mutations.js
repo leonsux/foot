@@ -4,12 +4,10 @@ const mutations = {
   },
   setInfo (state, userMsg) {
     state.userMsg = userMsg
-    // localStorage.userMsg = JSON.stringify(state.userMsg)
+  },
+  setPerson (state, params) {
+    state.persons = params
   }
-  // exit (state) {
-  //   state.user_info = {}
-  //   localStorage.removeItem('user_info')
-  // }
 }
 
 export default mutations

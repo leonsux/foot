@@ -11,7 +11,7 @@
     <div>
       <mt-field label="起始日期" placeholder="请输入" type="date" v-model="startTime"></mt-field>
       <mt-field label="结束日期" placeholder="请输入" type="date" v-model="endTime"></mt-field>
-      <mt-button @click="setDurationOk(startTime, endTime)" type="primary">设置好了</mt-button>
+      <mt-button class="set-ok-btn" @click="setDurationOk(startTime, endTime)" type="primary">设置好了</mt-button>
     </div>
 
     <!-- <mt-datetime-picker
@@ -55,5 +55,8 @@
     > div{
       text-align: center;
     }
+  }
+  .set-ok-btn{
+    margin: 10px;
   }
 </style>

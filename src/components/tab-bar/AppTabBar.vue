@@ -25,7 +25,7 @@
           {info: '消息', name: 'AppMessage', ico: 'iconfont icon-wujiaoxingkong', id: 3},
           {info: '我的', name: 'AppMine', ico: 'iconfont icon-profile', id: 4}
         ],
-        activeBar: 0
+        activeBar: -1
       }
     }
   }

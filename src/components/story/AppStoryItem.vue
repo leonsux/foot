@@ -1,18 +1,17 @@
 <template>
-  <div class="app-box app-story-item" @click="toDetail">
+  <div class="app-box app-story-item">
     <div class="story-item-content">
-      <img :src="story.imgUrl" alt="">
+      <img @click.stop="toDetail" :src="story.imgUrl" alt="">
       <div class="story-preview">
-        <!-- <i class="fa fa-plus"></i> -->
-        <!-- 带你去旅行，去吃饭 -->
-        <div>
-          <img class="user-img" :src="story.userImg" alt="">
-          <b class="story-site">{{story.site}}</b>
-          <b>{{story.title}}</b>
+        <div @click.stop="toDetail">
+          <b style="font-size: 16px;">{{story.title}}</b>
+          <b class="story-site"><i class="fa fa-map-marker"></i>{{story.site}}</b>
         </div>
-        <div>
-          <i class="fa fa-thumbs-o-up">{{story.thrumbnum}}</i>
-          <i class="fa fa-commenting-o">{{story.commentnum}}</i>
+        <div class="story-item-control">
+          <img class="user-img" :src="story.userImg" alt="">
+          <i @click="toastIt" class="fa fa-commenting-o">{{story.commentnum}}</i>
+          <b @click="likeIt=!likeIt"><i class="fa fa-thumbs-o-up" :style="{color: likeIt ? 'red' : ''}"></i>{{Number(story.thrumbnum) + (likeIt?1:0)}}</b>
+          
         </div>
       </div>
     </div>
@@ -20,6 +19,7 @@
 </template>
 
 <script>
+  import { Toast } from 'mint-ui'
   export default {
     name: 'app-story-item',
     props: ['story'],
@@ -32,6 +32,17 @@
             detail: this.story
           }
         })
+      },
+      toastIt () {
+        Toast({
+          message: '成为大会员才能评论哦~',
+          duration: 1500
+        })
+      }
+    },
+    data () {
+      return {
+        likeIt: false
       }
     }
   }
@@ -74,13 +85,17 @@ $lgray: #ddd;
         flex-direction: column;
         justify-content: space-between;
         .story-site{
-          font-size: 1.2em;
-          // color: #fff;
+          color: #5FD9CD;
         }
+      }
+      .story-item-control{
+        margin-top: 5px;
+        font-size: 16px;
         .user-img{
           width: 30px;
           height: 30px;
           border-radius: 50%;
+          margin-right: 5px;
         }
       }
     }

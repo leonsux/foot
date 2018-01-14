@@ -7,34 +7,33 @@
     </mt-header>
 
     <div class="data-list">
-      <div class="searchBox">
-        <input class="" type="text">
-      </div> 
-      <div class="hot-site">
-        <p>热门目的地</p>
-        <ul>
-          
-        </ul>
-      </div>
-      <div class="history-search">
-        <p>最近搜索</p>
-        <ul>
-          
-        </ul>
-      </div>
-
+      <search-bar :hotSites="hotSites" :histories="histories"></search-bar>
     </div>
   </div>
 </template>
 
 <script>
+  import SearchBar from '../common/SearchBar'
   export default {
     name: 'app-filte-search',
     data () {
       return {
         startTime: '',
-        endTime: ''
+        endTime: '',
+        hotSites: [
+          {name: '东京', imgUrl: 'http://img0.imgtn.bdimg.com/it/u=680548402,3363944420&fm=27&gp=0.jpg'},
+          {name: '北京', imgUrl: 'http://img0.imgtn.bdimg.com/it/u=680548402,3363944420&fm=27&gp=0.jpg'},
+          {name: '巴黎', imgUrl: 'http://img0.imgtn.bdimg.com/it/u=680548402,3363944420&fm=27&gp=0.jpg'},
+          {name: '法国', imgUrl: 'http://img0.imgtn.bdimg.com/it/u=680548402,3363944420&fm=27&gp=0.jpg'}
+        ],
+        histories: [
+          {name: '土耳其'},
+          {name: '迈阿密'}
+        ]
       }
+    },
+    components: {
+      SearchBar
     }
   }
 </script>
