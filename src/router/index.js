@@ -111,7 +111,14 @@ export default new Router({
       children: [
         {
           path: '',
-          component: AppMineLogin
+          redirect: to => {
+            if (!localStorage.userMsg) {
+              return {name: 'AppMinelogin'}
+            } else {
+              this.$store.commit('registerInfos', JSON.parse(localStorage.userMsg))
+              return {name: 'AppMinePersonal'}
+            }
+          }
         },
         {
           path: '/login',

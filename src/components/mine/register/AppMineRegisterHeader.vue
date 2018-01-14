@@ -10,13 +10,14 @@
 <script>
 export default {
   name: 'app-mine-register-header'
+
 }
 </script>
 
 <style lang="scss">
   .app-mine-register-header{
     .mint-header{
-      height: 86px;
+      height: 50px;
       font-size: 16px;
       color:#333;
       background: #F5F5F5;

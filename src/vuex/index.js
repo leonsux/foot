@@ -7,7 +7,8 @@ import getters from './getters'
 Vue.use(Vuex)
 
 const state = {
-  duration: {}
+  duration: {},
+  userMsg: {}
 }
 
 export default new Vuex.Store({

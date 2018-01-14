@@ -16,7 +16,7 @@ export default {
 <style lang="scss">
   .app-mine-login-header{
     .mint-header{
-      height: 86px;
+      height: 50px;
       font-size: 16px;
       color:#333;
       background: #F5F5F5;
