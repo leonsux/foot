@@ -12,7 +12,7 @@
           <i class="iconfont icon-verifycode">&#xe61b;</i>
           <input v-model="registerInfo.code" type="number" class="verifycode" placeholder="请输入验证码"/>
           <span v-if="registerInfo.sendAuthCode" class="auth_text" @click="getAuthCode">获取验证码</span>
-          <span v-else class="auth_text">{{registerInfo.auth_time}} 秒之重新发送</span> 
+          <span v-else :style="{ background: '#fff' , color: '#999'}" class="auth_text">{{registerInfo.auth_time}} 秒之重新发送</span> 
         </p>
       </div>
       <div class="register-item">
@@ -62,7 +62,21 @@
             duration: 1000
           })
           return 0
-        } if (params.userCode.trim() === '') {
+        }
+        var userMsg = JSON.parse(localStorage.userMsg)
+        for (var i = 0; i < userMsg.length; i++) {
+          console.log(111)
+          if (userMsg[i].userTel === params.userTel) {
+            console.log(2333)
+            Toast({
+              message: '该手机号已被注册！',
+              duration: 1000
+            })
+            return
+          }
+          break
+        }
+        if (params.userCode.trim() === '') {
           Toast({
             message: '请输入短信验证码',
             duration: 1000

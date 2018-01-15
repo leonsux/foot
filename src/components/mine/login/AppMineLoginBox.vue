@@ -14,7 +14,7 @@
             <p class="login">
               <i class="iconfont icon-pwd">&#xe603;</i>
               <input v-model="loginInfo.userPwd"  :type="visi ? 'text' : 'password'" class="pwd" name="pwd" placeholder="请输入密码"/>
-              <i @click="visi=!visi" class="iconfont icon-eye">&#xe61d;</i>
+              <i @click="visi=!visi" :class="!visi?'iconfont icon-yanjing-bi':'fa fa-eye'"></i>
             </p>
           </div>          
           <div class="auto">
@@ -133,7 +133,7 @@ export default {
                   font-size: 26px;
                   color:#999;
               }
-              .icon-eye{
+              .icon-yanjing-bi{
                   padding-right:5px;
               }
               input {
