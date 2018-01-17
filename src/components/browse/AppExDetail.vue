@@ -1,24 +1,12 @@
 <template>
   <div class="toast-box app-ex-detail">
     <mt-header :title="detail.type">
-      <router-link to="/" slot="left">
-        <mt-button icon="back">返回</mt-button>
+      <router-link to="/Appexperiences" slot="left">
+        <mt-button icon="back"></mt-button>
       </router-link>
     </mt-header>
 
     <div class="story-info">
-      <!-- <div class="story-info-top">
-        <div class="story-top-left">
-          <img :src="detail.userImg" alt="">
-          <div>
-            <span>{{detail.userName}}</span>
-            <span>{{detail.site}}</span>
-          </div>
-          <span>昨天</span>
-        </div>
-        
-        <button>关注</button>
-      </div> -->
       <div class="story-info-middle">
         <div class="story-info-imgs">
           <img :src="detail.experience_img" alt="" :title="detail.type">

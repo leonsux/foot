@@ -2,7 +2,7 @@
   <div class="toast-box app-experiences">
     <mt-header title="体验">
       <router-link to="/" slot="left">
-        <mt-button icon="back">返回</mt-button>
+        <mt-button icon="back"></mt-button>
       </router-link>
     </mt-header>
 
@@ -17,6 +17,8 @@
 
 <script>
 import axios from 'axios'
+import { mapState } from 'vuex'
+
 export default {
   name: 'app-experiences',
   data () {
@@ -25,6 +27,9 @@ export default {
       list: []
     }
   },
+  computed: {
+    ...mapState(['toExType'])
+  },
   methods: {
     toExDetail (item) {
       this.$router.push({
@@ -32,20 +37,23 @@ export default {
         name: 'AppExDetail',
         params: {item}
       })
+    },
+    getDate () {
+      axios.get('/api/browse/experiencelist')
+      .then((res) => {
+        res.data.data.forEach((item) => {
+          if (item.type === this.type) {
+            this.list.push(item)
+          }
+        })
+      })
+      .catch((res) => {
+        console.log('fail')
+      })
     }
   },
   mounted () {
-    axios.get('/api/browse/experiencelist')
-    .then((res) => {
-      res.data.data.forEach((item) => {
-        if (item.type === this.type) {
-          this.list.push(item)
-        }
-      })
-    })
-    .catch((res) => {
-      alert('what?')
-    })
+    this.getDate()
   }
 }
 </script>

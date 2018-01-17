@@ -2,7 +2,7 @@
   <div class="toast-box app-ty-detail">
     <mt-header :title="detail.type_name">
       <router-link to="/" slot="left">
-        <mt-button icon="back">返回</mt-button>
+        <mt-button icon="back"></mt-button>
       </router-link>
     </mt-header>
 

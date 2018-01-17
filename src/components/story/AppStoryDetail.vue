@@ -1,28 +1,32 @@
 <template>
   <div class="toast-box app-story-detail">
-    <mt-header title="故事详情">
+    <mt-header title="">
       <router-link to="/appstory" slot="left">
-        <mt-button icon="back">返回</mt-button>
+        <mt-button icon="back"></mt-button>
       </router-link>
-      <!-- <router-link to="/appstory" slot="right">
-        <mt-button>链接</mt-button>
-      </router-link>
+
       <router-link to="/appstory" slot="right">
-        <mt-button>心愿单</mt-button>
-      </router-link> -->
+        <mt-button><i class="fa fa-share-alt"></i></mt-button>
+        
+      </router-link>
+      <router-link style="margin-left: 10px;" to="/appstory" slot="right">
+        <i class="fa fa-heart-o"></i>
+      </router-link>
     </mt-header>
     <div class="story-info">
       <div class="story-info-top">
         <div class="story-top-left">
           <img :src="detail.userImg" alt="">
-          <div>
-            <span>{{detail.userName}}</span>
+          <div style="display: flex; flex-direction: column; justify-content: space-between;">
+            <span style="color:#666;">{{detail.userName}}</span>
+            <p>
+              <span style="color: #666;">{{detail.site}}</span>
+              <span style="color: #999;">昨天</span>
+            </p>
           </div>
-            <span style="color: #5FD9CD"><i class="fa fa-map-marker"></i>{{detail.site}}</span>
-          <!-- <span>昨天</span> -->
         </div>
         
-        <mt-button @click="changeMind" :type="!likeHe ? 'danger' : 'default'" size="small"><i :class="!likeHe ? 'fa fa-plus' : 'fa fa-check'"></i>&nbsp;{{likeHe ? '取关' : '关注'}}</mt-button>
+        <mt-button style="background: #ff3d84;" @click="changeMind" :type="!likeHe ? 'danger' : 'default'" size="small"><i :class="!likeHe ? 'fa fa-plus' : 'fa fa-check'"></i>&nbsp;{{likeHe ? '取关' : '关注'}}</mt-button>
       </div>
       <div class="story-info-middle">
         <div class="story-info-imgs">
@@ -73,15 +77,17 @@
       display: flex;
       flex-direction: column;
       .story-info-top{
-        padding: 5px 10px;
+        height: 75px;
+        padding: 0 10px;
         display: flex;
         justify-content: space-between;
+        align-items: center;
         .story-top-left{
           flex: 1;
           display: flex;
           > img{
-            width: 30px;
-            height: 30px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
           }
           > div{
@@ -93,13 +99,19 @@
         }
       }
       .story-info-middle{
+        padding: 0 10px;
         .story-info-imgs{
           > img{
             width: 100%;
           }
         }
         .story-info-txt{
-          > h2, > p{
+          color: #333;
+          > h2{
+            font-size: 16px;
+            margin: 10px 5px 5px;
+          }
+          > p{
             padding: 10px;
           }
         }

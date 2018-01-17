@@ -26,7 +26,11 @@ import AppWriting from '@/components/story/AppWriting'
 // 搜索
 import AppStorySearch from '@/components/story/AppStorySearch'
 
+// 收藏
 import AppFavorite from '@/components/favorite/AppFavorite'
+// 收藏详情
+import AppFavDetail from '@/components/favorite/AppFavDetail'
+
 import AppMessage from '@/components/message/AppMessage'
 // 我的
 import AppMine from '@/components/mine/AppMine'
@@ -41,7 +45,8 @@ export default new Router({
     {
       path: '/',
       name: 'AppBrowse',
-      component: AppBrowse
+      component: AppBrowse,
+      meta: { keepAlive: true }
     },
     {
       path: '/Appexperiences',
@@ -76,7 +81,8 @@ export default new Router({
     {
       path: '/appstory',
       name: 'AppStory',
-      component: AppStory
+      component: AppStory,
+      meta: { keepAlive: true }
     },
     {
       path: '/appstorydetail',
@@ -96,18 +102,26 @@ export default new Router({
     {
       path: '/favorite',
       name: 'AppFavorite',
-      component: AppFavorite
+      component: AppFavorite,
+      meta: { keepAlive: true }
+    },
+    {
+      path: '/AppFavDetail',
+      name: 'AppFavDetail',
+      component: AppFavDetail
     },
     {
       path: '/message',
       name: 'AppMessage',
-      component: AppMessage
+      component: AppMessage,
+      meta: { keepAlive: true }
     },
     {
       path: '/mine',
       name: 'AppMine',
       redirect: '/login',
       component: AppMine,
+      meta: { keepAlive: true },
       children: [
         {
           path: '',

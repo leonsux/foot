@@ -4,8 +4,8 @@
       <img @click.stop="toDetail" :src="story.imgUrl" alt="">
       <div class="story-preview">
         <div @click.stop="toDetail">
-          <b style="font-size: 16px;">{{story.title}}</b>
-          <b class="story-site"><i class="fa fa-map-marker"></i>{{story.site}}</b>
+          <b class="story-site">{{story.site}}</b>
+          <b>{{story.title}}</b>
         </div>
         <div class="story-item-control">
           <img class="user-img" :src="story.userImg" alt="">
@@ -85,7 +85,8 @@ $lgray: #ddd;
         flex-direction: column;
         justify-content: space-between;
         .story-site{
-          color: #5FD9CD;
+          font-size: 16px;
+          margin-right: 10px;
         }
       }
       .story-item-control{

@@ -1,6 +1,6 @@
 <template>
   <div class="app-favorite-item">
-    <div class="favorite-img">
+    <div class="favorite-img" @click="toFavDetail">
       <img v-lazy="collect.collect_img" alt="" :title="collect.hourse_type">
       <img class="like-ico" src="/static/imgs/like.png" alt="">
       <img class="user-head" :src="collect.user_img" alt="">
@@ -38,6 +38,16 @@
           rank[Math.floor(hrank)] = 'fav-rank fa fa-star-half-o'
         }
         return rank
+      }
+    },
+    methods: {
+      toFavDetail () {
+        let col = this.collect
+        this.$router.replace({
+          path: '/favorite',
+          name: 'AppFavDetail',
+          params: {collect: col}
+        })
       }
     }
   }

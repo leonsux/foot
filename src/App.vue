@@ -1,8 +1,10 @@
 <template>
   <div id="app">
-    <!-- <keep-alive :exclude="AppStoryDetail"> -->
-      <router-view></router-view>
-    <!-- </keep-alive> -->
+    <keep-alive >
+      <router-view v-if="$route.meta.keepAlive"></router-view>
+    </keep-alive>
+    <router-view v-if="!$route.meta.keepAlive"></router-view>
+
     <app-tab-bar></app-tab-bar>
     <transition name="fade">
       <welcome v-if="!isReady"></welcome>
@@ -48,11 +50,16 @@ export default {
   display: flex;
   flex-direction: column;
   background: #f5f5f5;
-}
-.mint-header{
-  background: #fff;
-  color: #666;
-  height: 50px;
+  .mint-header{
+    background: #ff5996;
+    color: #fff;
+    height: 50px;
+    font-size: 18px;
+    i{
+      color: #fff;
+      font-size: 24px;
+    }
+  }
 }
 .fade-enter-active, .fade-leave-active {
   transition: opacity 1s;

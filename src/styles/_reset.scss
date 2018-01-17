@@ -17,7 +17,7 @@ input,textarea,button { border: 0; margin: 0; padding: 0;}
 textarea { resize: none;}
 table { border-collapse: collapse; border-spacing: 0; }
 td, th { padding: 0; }
-h1, h2, h3, h4, h5, h6, p, figure, form, blockquote { margin: 0; }
+h1, h2, h3, h4, h5, h6, p, figure, form, blockquote { margin: 0; font-weight: normal;}
 ul, ol, li, dl, dd { margin: 0; padding: 0; }
 ul, ol { list-style: none; }
 input::-moz-placeholder, textarea::-moz-placeholder { color: #ccc; }
