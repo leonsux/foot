@@ -30,9 +30,18 @@ import AppFavorite from '@/components/favorite/AppFavorite'
 import AppMessage from '@/components/message/AppMessage'
 // 我的
 import AppMine from '@/components/mine/AppMine'
+// 我的 登录
 import AppMineLogin from '@/components/mine/login/AppMineLogin'
+// 我的 注册
 import AppMineRegister from '@/components/mine/register/AppMineRegister'
+// 我的 个人中心
 import AppMinePersonal from '@/components/mine/personal/AppMinePersonal'
+// 我的 个人中心 客服
+import AppMinePersonalCS from '@/components/mine/personal/AppMinePersonalCS'
+// 我的 注册
+import AppMineSet from '@/components/mine/set/AppMineSet'
+import AppMineSetInvite from '@/components/mine/set/AppMineSetInvite'
+import AppMineSetAbout from '@/components/mine/set/AppMineSetAbout'
 
 Vue.use(Router)
 
@@ -134,8 +143,28 @@ export default new Router({
           path: '/personal',
           name: 'AppMinePersonal',
           component: AppMinePersonal
+        },
+        {
+          path: '/set',
+          name: 'AppMineSet',
+          component: AppMineSet
         }
       ]
+    },
+    {
+      path: '/personal',
+      name: 'AppMinePersonalCS',
+      component: AppMinePersonalCS
+    },
+    {
+      path: '/set',
+      name: 'AppMineSetInvite',
+      component: AppMineSetInvite
+    },
+    {
+      path: '/set',
+      name: 'AppMineSetAbout',
+      component: AppMineSetAbout
     }
   ]
 })
