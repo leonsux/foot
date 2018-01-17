@@ -65,11 +65,9 @@
         }
         var userMsg = JSON.parse(localStorage.userMsg)
         for (var i = 0; i < userMsg.length; i++) {
-          console.log(111)
           if (userMsg[i].userTel === params.userTel) {
-            console.log(2333)
             Toast({
-              message: '该手机号已被注册！',
+              message: '该手机号已被注册!',
               duration: 1000
             })
             return
