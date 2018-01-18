@@ -1,6 +1,6 @@
 <template>
   <div class="app-mine-personal">
-    <mt-header title="设置">
+    <mt-header title="个人中心">
       <router-link to="/set" slot="right">
         <i class="iconfont icon-shezhi"></i>
       </router-link>

@@ -55,6 +55,7 @@
         }, 1000)
       },
       handleRegisterclick (params) {
+        console.log(params)
         var telReg = /^1[3|4|5|7|8][0-9]{9}$/
         if (!telReg.test(params.userTel)) {
           Toast({
@@ -63,7 +64,7 @@
           })
           return 0
         }
-        var userMsg = JSON.parse(localStorage.userMsg)
+        var userMsg = localStorage.userMsg ? JSON.parse(localStorage.userMsg) : []
         for (var i = 0; i < userMsg.length; i++) {
           if (userMsg[i].userTel === params.userTel) {
             Toast({
@@ -72,7 +73,7 @@
             })
             return
           }
-          break
+          // break
         }
         if (params.userCode.trim() === '') {
           Toast({
@@ -80,7 +81,9 @@
             duration: 1000
           })
           return 0
-        } if (params.userPwd.length < 6 || params.userPwd.length > 20) {
+        }
+
+        if (params.userPwd.length < 6 || params.userPwd.length > 20) {
           Toast({
             message: '密码长度不正确',
             duration: 1000
