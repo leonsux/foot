@@ -17,10 +17,7 @@
           <div class="favorite-info">
             <p class="fav-type">{{detail.hourse_type}}</p>
             <p class="fav-price">￥{{detail.price}}</p>
-            <p>
-              <i v-for="i in getRank" :class="i"></i>
-              {{detail.hourse_rank}}
-            </p>
+            
 
           </div>
         </div>
@@ -42,4 +39,9 @@
 </script>
 
 <style lang="scss">
+.story-info-imgs{
+  > img{
+    width: 100%;
+  }
+}
 </style>
