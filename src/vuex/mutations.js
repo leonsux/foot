@@ -7,6 +7,9 @@ const mutations = {
   },
   setPerson (state, params) {
     state.persons = params
+  },
+  setMyMessage (state, params) {
+    state.myMessage.push(params)
   }
 }
 

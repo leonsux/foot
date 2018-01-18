@@ -31,7 +31,10 @@ import AppFavorite from '@/components/favorite/AppFavorite'
 // 收藏详情
 import AppFavDetail from '@/components/favorite/AppFavDetail'
 
+// 消息
 import AppMessage from '@/components/message/AppMessage'
+import AppMsgDetail from '@/components/message/AppMsgDetail'
+
 // 我的
 import AppMine from '@/components/mine/AppMine'
 import AppMineLogin from '@/components/mine/login/AppMineLogin'
@@ -115,6 +118,11 @@ export default new Router({
       name: 'AppMessage',
       component: AppMessage,
       meta: { keepAlive: true }
+    },
+    {
+      path: '/AppMsgDetail',
+      name: 'AppMsgDetail',
+      component: AppMsgDetail
     },
     {
       path: '/mine',

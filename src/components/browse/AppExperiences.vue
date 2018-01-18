@@ -60,6 +60,7 @@ export default {
 
 <style lang="scss">
   .ex-con{
+    margin-top: 10px;
     padding: 0 10px;
   }
 </style>

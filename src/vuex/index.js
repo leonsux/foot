@@ -15,7 +15,8 @@ const state = {
     child: 0,
     baby: 0,
     pet: false
-  }
+  },
+  myMessage: []
 }
 
 export default new Vuex.Store({

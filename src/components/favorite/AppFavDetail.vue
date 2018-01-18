@@ -18,7 +18,6 @@
             <p class="fav-type">{{detail.hourse_type}}</p>
             <p class="fav-price">￥{{detail.price}}</p>
             
-
           </div>
         </div>
       </div>
@@ -42,6 +41,16 @@
 .story-info-imgs{
   > img{
     width: 100%;
+  }
+}
+.story-info-txt{
+  color: #333;
+  > h2{
+    font-size: 16px;
+    margin: 10px 5px 5px;
+  }
+  p{
+    padding: 10px;
   }
 }
 </style>

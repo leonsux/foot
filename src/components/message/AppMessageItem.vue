@@ -1,5 +1,5 @@
 <template>
-  <div class="app-message-item">
+  <div @click="toMsgDetail(message)" class="app-message-item">
     <div class="message-ico"><!-- <i class="fa fa-volume-up"> --><img :src="message.imgUrl" alt=""></i></div>
     <div class="message-info">
       <h2>{{message.title}}</h2>
@@ -17,6 +17,15 @@
     data () {
       return {
         messages: []
+      }
+    },
+    methods: {
+      toMsgDetail (msg) {
+        this.$router.push({
+          path: '/message',
+          name: 'AppMsgDetail',
+          params: {msg}
+        })
       }
     }
   }
