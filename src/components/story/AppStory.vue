@@ -57,13 +57,13 @@
   }
   .mint-navbar .mint-tab-item{
     height: 100%;
-    padding: 0;
+    padding: 0 !important;
     height: 40px;
     // line-height: 40px;
   }
   .mint-navbar .mint-tab-item.is-selected{
-    color: #009d25;
-    border: none;
+    color: #009d25 !important;;
+    border: none !important;
     .mint-tab-item-label{
       
       border-bottom: 2px solid #009d25;
