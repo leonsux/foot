@@ -1,10 +1,10 @@
 <template>
   <div class="app-mine-personal">
-    <div class="personalHeader">
-      <span></span>
-      <span>我的</span>
-      <i @click="toSet()" class="iconfont">&#xe607;</i>
-    </div>
+    <mt-header title="设置">
+      <router-link to="/set" slot="right">
+        <i class="iconfont icon-shezhi"></i>
+      </router-link>
+    </mt-header>
     <AppMinePersonalMsg></AppMinePersonalMsg>
     <AppMinePersonalItem></AppMinePersonalItem>
   </div>
@@ -15,11 +15,6 @@ import AppMinePersonalMsg from './AppMinePersonalMsg'
 import AppMinePersonalItem from './AppMinePersonalItem'
 export default {
   name: 'app-mine-personal',
-  methods: {
-    toSet () {
-      this.$router.push({name: 'AppMineSet'})
-    }
-  },
   components: {
     AppMinePersonalMsg,
     AppMinePersonalItem
@@ -31,16 +26,13 @@ export default {
   .app-mine-personal{
     width:100%;
     font-size: 16px;
-    .personalHeader {
-      height: 44px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #FF3D84;
+    .mint-header{
+      background-color: #ff3d84;
       color:#fff;
-      i{
+      font-size: 16px;
+      i {
         font-size: 20px;
-        padding-right: 10px;
+        color:#fff;
       }
     }
   }

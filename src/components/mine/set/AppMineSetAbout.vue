@@ -1,12 +1,12 @@
 <template>
   <div class="app-box app-mine-set-about">
     <mt-header title="关于足迹">
-      <router-link to="/" slot="left">
-        <i class="iconfont icon-houtui" @click="back()"></i>
+      <router-link to="/set" slot="left">
+        <i class="iconfont icon-houtui"></i>
       </router-link>
     </mt-header>
     <div class="box">
-      <img src="../../../assets/foot.jpg" alt="" />
+      <img src="/static/imgs/foot.jpg" alt="" />
       <h4>足迹</h4>
     </div>
     <div class="version">
@@ -25,9 +25,6 @@ export default {
         message: '网络不好，请稍后再试~',
         duration: 2000
       })
-    },
-    back () {
-      this.$router.replace({name: 'AppMineSet'})
     }
   }
 }
@@ -41,6 +38,10 @@ export default {
       background-color: #ff3d84;
       color:#fff;
       font-size: 16px;
+      i {
+        font-size: 20px;
+        padding-right: 10px;
+      }
     }
     .box {
       width:100%;

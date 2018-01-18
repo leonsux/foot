@@ -13,17 +13,16 @@ export default {
   data () {
     return {
       lists: [
-        {id: 1, title: '积分', icon: 'iconfont icon-jifen', name: ''},
-        {id: 2, title: '付款', icon: 'iconfont icon-fukuan', name: ''},
-        {id: 3, title: '会员中心', icon: 'iconfont icon-huiyuan', name: ''},
-        {id: 4, title: '评价', icon: 'iconfont icon-jiahao', name: ''},
+        {id: 1, title: '积分', icon: 'iconfont icon-jifen', name: 'AppMinePersonalTS'},
+        {id: 2, title: '付款', icon: 'iconfont icon-fukuan', name: 'AppMinePersonalTS'},
+        {id: 3, title: '会员中心', icon: 'iconfont icon-huiyuan', name: 'AppMinePersonalTS'},
+        {id: 4, title: '评价', icon: 'iconfont icon-jiahao', name: 'AppMinePersonalTS'},
         {id: 5, title: '客服', icon: 'iconfont icon-kefu', name: 'AppMinePersonalCS'}
       ]
     }
   },
   methods: {
     tohere (params) {
-      console.log(params)
       this.$router.push({name: params})
     }
   }
@@ -43,6 +42,12 @@ export default {
         i{
             padding: 0 10px;
             font-size: 26px;
+        }
+        span {
+          display: block;
+          width:88%;
+          height:50px;
+          line-height: 50px;
         }
       }
   }

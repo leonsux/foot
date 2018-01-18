@@ -38,6 +38,7 @@ import AppMineRegister from '@/components/mine/register/AppMineRegister'
 import AppMinePersonal from '@/components/mine/personal/AppMinePersonal'
 // 我的 个人中心 客服
 import AppMinePersonalCS from '@/components/mine/personal/AppMinePersonalCS'
+import AppMinePersonalTS from '@/components/mine/personal/AppMinePersonalTS'
 // 我的 注册
 import AppMineSet from '@/components/mine/set/AppMineSet'
 import AppMineSetInvite from '@/components/mine/set/AppMineSetInvite'
@@ -155,6 +156,11 @@ export default new Router({
       path: '/personal',
       name: 'AppMinePersonalCS',
       component: AppMinePersonalCS
+    },
+    {
+      path: '/personal',
+      name: 'AppMinePersonalTS',
+      component: AppMinePersonalTS
     },
     {
       path: '/set',

@@ -1,6 +1,6 @@
 <template>
   <div class="app-mine-personalMsg">
-    <i><img src="../../../assets/img.jpg" alt=""/></i>
+    <i><img src="/static/imgs/img.jpg" alt=""/></i>
     <span>{{userMsg.userTel}}</span>
   </div>  
 </template>

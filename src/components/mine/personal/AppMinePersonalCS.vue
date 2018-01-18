@@ -1,8 +1,8 @@
 <template>
   <div class="app-box app-mine-personal-cs">
     <mt-header title="客服">
-      <router-link to="/" slot="left">
-        <mt-button icon="back"></mt-button>
+      <router-link to="/personal" slot="left">
+        <i class="iconfont icon-houtui" ></i>
       </router-link>
     </mt-header>
     <div class="kefu">
@@ -45,6 +45,10 @@ export default {
       background-color: #ff3d84;
       color:#fff;
       font-size: 16px;
+      i{
+        font-size: 20px;
+        padding-right: 10px;
+      }
     }
     .kefu{
       width:100%;

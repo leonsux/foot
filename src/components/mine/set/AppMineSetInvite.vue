@@ -1,8 +1,8 @@
 <template>
   <div class="app-box app-mine-set-invite">
     <mt-header title="邀请好友">
-      <router-link to="/" slot="left">
-        <i class="iconfont icon-houtui" @click="back()"></i>
+      <router-link to="/set" slot="left">
+        <i class="iconfont icon-houtui"></i>
       </router-link>
     </mt-header>
     <div class="box">
@@ -24,10 +24,6 @@ export default {
         message: '网络不好，请稍后再试~',
         duration: 2000
       })
-    },
-    back () {
-      alert(8)
-      this.$router.replace({name: 'AppMineSet'})
     }
   }
 }
@@ -41,6 +37,10 @@ export default {
       background-color: #fff;
       color:#333;
       font-size: 16px;
+      i {
+        font-size: 20px;
+        padding-right: 10px;
+      }
     }
     .box {
       width:310px;
