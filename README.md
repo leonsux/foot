@@ -1,5 +1,15 @@
 # 项目名称：足迹
 
+### 启动方式
+
+1. `npm i` 安装模块
+
+2. `npm start` 启动服务
+
+3. `npm run mock` 启动json-server
+
+4. 在浏览器输入`localhost:8080`，地址和端口可在config目录下的`index.js`中修改`host`和`port`
+
 ### 项目介绍：
 
 主要模块分为：浏览 故事 收藏 消息 我的

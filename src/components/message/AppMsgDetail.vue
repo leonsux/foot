@@ -39,7 +39,7 @@
       return {
         txt: '',
         detail: this.$route.params.msg,
-        myImg: 'https://avatars3.githubusercontent.com/u/16915485?s=460&v=4',
+        myImg: '/static/imgs/img.jpg',
         myMsg: []
       }
     },
@@ -57,9 +57,10 @@
       }
     },
     computed: {
-      ...mapState(['myMessage'])
+      ...mapState(['myMessage', 'userMsg'])
     },
     mounted () {
+      this.myImg = this.userMsg.userImg ? this.userMsg.userImg : '/static/imgs/img.jpg'
       this.myMsg = this.myMessage
     }
   }
