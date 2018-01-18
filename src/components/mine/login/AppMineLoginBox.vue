@@ -1,35 +1,35 @@
 <template>
   <div class="app-mine-login-box">
-      <div class="login-ico">
-        <form action="" method="" @submit.prevent = 'loginInfos'>
-          <div class="login-item">
-            <label class="label" for="tel">手机号</label>
-            <p class="login">
-              <i class="fa fa-user-o"></i>
-              <input v-model="loginInfo.userTel" type="number" class="tel" name="tel" placeholder="请输入手机号"/>
-            </p>
-          </div>
-          <div class="login-item">
-            <label class="label" for="pwd">密码</label>
-            <p class="login">
-              <i class="iconfont icon-pwd">&#xe603;</i>
-              <input v-model="loginInfo.userPwd"  :type="visi ? 'text' : 'password'" class="pwd" name="pwd" placeholder="请输入密码"/>
-              <i @click="visi=!visi" class="iconfont icon-eye">&#xe61d;</i>
-            </p>
-          </div>          
-          <div class="auto">
-            <span><input type="checkbox" >&nbsp;&nbsp;记住密码</span>
-            <span><input type="checkbox" >&nbsp;&nbsp;自动登录</span>
-          </div>
-          <button @click="loginInfos('', {userTel:loginInfo.userTel,userPwd:loginInfo.userPwd})" class="login-btn" type="submit" >登录</button>
-          <div class="re-links">
-            <router-link :to="{name: 'AppMineRegister'}">忘记密码？</router-link>
-            <router-view></router-view>
-            <router-link :to="{name: 'AppMineRegister'}">新用户注册</router-link>
-            <router-view></router-view>
-          </div>
-        </form>
-      </div>
+    <div class="login-ico">
+      <form action="" method="" @submit.prevent = 'loginInfos'>
+        <div class="login-item">
+          <label class="label" for="tel">手机号</label>
+          <p class="login">
+            <i class="fa fa-user-o"></i>
+            <input v-model="loginInfo.userTel" type="number" class="tel" name="tel" placeholder="请输入手机号"/>
+          </p>
+        </div>
+        <div class="login-item">
+          <label class="label" for="pwd">密码</label>
+          <p class="login">
+            <i class="iconfont icon-pwd">&#xe603;</i>
+            <input v-model="loginInfo.userPwd"  :type="visi ? 'text' : 'password'" class="pwd" name="pwd" placeholder="请输入密码"/>
+            <i @click="visi=!visi" :class="!visi?'iconfont icon-yanjing-bi':'fa fa-eye'"></i>
+          </p>
+        </div>          
+        <div class="auto">
+          <span><input type="checkbox" >&nbsp;&nbsp;记住密码</span>
+          <span><input type="checkbox" >&nbsp;&nbsp;自动登录</span>
+        </div>
+        <button @click="loginInfos('', {userTel:loginInfo.userTel,userPwd:loginInfo.userPwd})" class="login-btn" type="submit" >登录</button>
+        <div class="re-links">
+          <router-link :to="{name: 'AppMineRegister'}">忘记密码？</router-link>
+          <router-view></router-view>
+          <router-link :to="{name: 'AppMineRegister'}">新用户注册</router-link>
+          <router-view></router-view>
+        </div>
+      </form>
+    </div>
   </div>
 </template>
 
@@ -70,8 +70,10 @@ export default {
             message: '登录成功',
             duration: 1000
           })
-          this.setInfo(params)
-          that.$router.replace({name: 'AppMinePersonal'})
+          this.setInfo(userMsg[i])
+          setTimeout(() => {
+            that.$router.replace({name: 'AppMinePersonal'})
+          })
           break
         }
       }
@@ -133,7 +135,7 @@ export default {
                   font-size: 26px;
                   color:#999;
               }
-              .icon-eye{
+              .icon-yanjing-bi{
                   padding-right:5px;
               }
               input {
