@@ -1,7 +1,7 @@
 {
   "/api/story/stories": "/stories",
   "/api/collect/collections": "/collections",
-  "/api/browse/hourse": "/hourse",
+  "/api/browse/hourse_search": "/hourse_search",
   "/api/browse/experience": "/experience",
   "/api/browse/experiencelist": "/experiencelist",
   "/api/browse/home_type": "/hometype"

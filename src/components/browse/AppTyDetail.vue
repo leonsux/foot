@@ -7,18 +7,6 @@
     </mt-header>
 
     <div class="story-info">
-      <!-- <div class="story-info-top">
-        <div class="story-top-left">
-          <img :src="detail.userImg" alt="">
-          <div>
-            <span>{{detail.userName}}</span>
-            <span>{{detail.site}}</span>
-          </div>
-          <span>昨天</span>
-        </div>
-        
-        <button>关注</button>
-      </div> -->
       <div class="story-info-middle">
         <div class="story-info-imgs">
           <img :src="detail.post_img" alt="" :title="detail.type">
@@ -29,7 +17,6 @@
         </div>
       </div>
     </div>
-    <!-- {{detail}} -->
   </div>
 </template>
 

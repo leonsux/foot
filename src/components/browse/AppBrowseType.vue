@@ -1,7 +1,5 @@
 <template>
   <div class="app-browse-type">
-    <!-- <div class="browse-title">民宿类型</div> -->
-    <!-- <mt-header title="民宿类型"></mt-header> -->
     <h1 class="browse-title">民宿类型</h1>
     <div class="type-content">
       <div @click="toTyDetail(item)" class="ty-item" v-for="item in types">
@@ -60,15 +58,12 @@
   .app-browse-type{
     display: flex;
     flex-direction: column; 
-    // padding: 20px;
   }
   .type-content{
     text-align: center;
-    // overflow-y: auto;
     .ty-item{
       display: inline-block;
       width: 48%;
-      // margin: 0 2% 5% 2%;
       margin-bottom: 5%;
       > img{
         width: 100%;

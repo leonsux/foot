@@ -22,7 +22,7 @@
           {info: '浏览', name: 'AppBrowse', ico: 'iconfont icon-jiaoyin1', id: 0},
           {info: '故事', name: 'AppStory', ico: 'iconfont icon-icon9', id: 1},
           {info: '收藏', name: 'AppFavorite', ico: 'iconfont icon-wujiaoxingkong', id: 2},
-          {info: '消息', name: 'AppMessage', ico: 'iconfont icon-wujiaoxingkong', id: 3},
+          {info: '消息', name: 'AppMessage', ico: 'fa fa-bell-o', id: 3},
           {info: '我的', name: 'AppMine', ico: 'iconfont icon-profile', id: 4}
         ],
         activeBar: -1

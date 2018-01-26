@@ -15,7 +15,7 @@
         
       </div>
 
-      <textarea placeholder="请书写你的故事" name="" id="" cols="30" rows="10"></textarea>
+      <textarea v-model="txt" placeholder="请书写你的故事" name="" id="" cols="30" rows="10"></textarea>
       <button class="finish-btn" @click="finishWrite">完成</button>
     </div>
   </div>
@@ -23,6 +23,7 @@
 
 <script>
   import { Indicator, Toast, MessageBox } from 'mint-ui'
+  import axios from 'axios'
   export default {
     name: 'app-writing',
     data () {
@@ -30,7 +31,8 @@
         src: '',
         elInput: null,
         defaultImg: 'http://cdn3.freepik.com/image/th/318-38775.jpg',
-        isFinish: false
+        isFinish: false,
+        txt: ''
       }
     },
     beforeRouteLeave (to, from, next) {
@@ -59,6 +61,7 @@
           const src = e.target.result
           // console.log('base64：', src)
           elImg.src = src
+          this.src = src
         }
         if (elInput.files && elInput.files[0]) {
           reader.readAsDataURL(elInput.files[0])
@@ -71,18 +74,48 @@
       },
       finishWrite () {
         // alert('sf')
+        let that = this
         this.isFinish = true
         Indicator.open({
           text: '发送中...',
           spinnerType: 'triple-bounce'
         })
         setTimeout(() => {
-          Indicator.close()
-          Toast({
-            message: '发送成功！',
-            duration: 1000
-          })
-          this.$router.push('/appstory')
+          var para = new URLSearchParams()
+          para.append('title', this.txt.slice(0, 5))
+          para.append('content', this.txt)
+          para.append('site', '北京')
+          para.append('imgUrl', this.src)
+          axios.post('api/story/writestory.php', para)
+            .then(res => {
+              console.log('写故事反馈：', res)
+              Indicator.close()
+              if (res.data.status_code === 200 || res.data.status_code === '200') {
+                that.$router.replace('/appstory')
+                Toast({
+                  message: '发送成功！',
+                  duration: 1000
+                })
+              } else if (res.data.status_code === 0 || res.data.status_code === '0') {
+                Toast({
+                  message: '请先登录！',
+                  duration: 1000
+                })
+              } else {
+                Toast({
+                  message: '发送失败！',
+                  duration: 1000
+                })
+              }
+            })
+            .catch(res => {
+              Indicator.close()
+              Toast({
+                message: '哎？发送失败了！',
+                duration: 1000
+              })
+              throw res
+            })
         }, 1000)
       }
     }

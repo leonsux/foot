@@ -94,8 +94,7 @@ export default new Router({
     {
       path: '/appstory',
       name: 'AppStory',
-      component: AppStory,
-      meta: { keepAlive: true }
+      component: AppStory
     },
     {
       path: '/appstorydetail',

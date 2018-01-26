@@ -5,9 +5,6 @@
         <mt-button icon="back">返回</mt-button>
       </router-link>
     </mt-header>
-
-    <!-- <button @click="startTime">起始日期</button>
-    <button>结束日期</button> -->
     <div>
       <mt-field label="起始日期" placeholder="请输入" type="date" v-model="startTime"></mt-field>
       <mt-field label="结束日期" placeholder="请输入" type="date" v-model="endTime"></mt-field>
@@ -18,7 +15,7 @@
 
 <script>
   import Vue from 'vue'
-  import { mapMutations } from 'vuex'
+  import { mapActions, mapMutations } from 'vuex'
   import { DatetimePicker } from 'mint-ui'
   Vue.component(DatetimePicker.name, DatetimePicker)
 
@@ -27,14 +24,16 @@
     data () {
       return {
         startTime: new Date().toString(),
-        endTime: '哈哈'
+        endTime: new Date().toString()
       }
     },
     methods: {
-      ...mapMutations(['setDuration']),
+      ...mapMutations(['setFrom']),
+      ...mapActions(['setDuration']),
       setDurationOk (startTime, endTime) {
         this.setDuration({startTime, endTime})
-        this.$router.push('/')
+        this.setFrom({startTime, endTime})
+        this.$router.replace('/')
       }
     },
     mounted () {

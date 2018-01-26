@@ -31,13 +31,11 @@ export default {
     }
   },
   beforeCreate () {
-    console.log('马达马达')
   },
   mounted () {
     setTimeout(() => {
       this.isReady = true
     }, 2000)
-    console.log('ready')
   }
 }
 </script>

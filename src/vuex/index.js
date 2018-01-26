@@ -9,6 +9,9 @@ Vue.use(Vuex)
 
 const state = {
   duration: {},
+  from: '',
+  to: '',
+  search_keyword: '',
   userMsg: {},
   persons: {
     adult: 1,
@@ -16,7 +19,8 @@ const state = {
     baby: 0,
     pet: false
   },
-  myMessage: []
+  myMessage: [],
+  vuex_hourses: []
 }
 
 export default new Vuex.Store({

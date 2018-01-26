@@ -1,0 +1,26 @@
+{
+  "status_code": 200,
+  "start": 0,
+  "count": 10,
+  "total": 120,
+  "data": [
+    {
+      "owner_id": 7534213,
+      "owner_img": "http://upload-images.jianshu.io/upload_images/3629578-d31cfa2a55545412.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240",
+      "hourse_img": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1515854606695&di=b8ec9f0b4ab5d5d51e0cb351fbc05204&imgtype=0&src=http%3A%2F%2Fm.tuniucdn.com%2Ffb2%2Ft1%2FG1%2FM00%2F4B%2FA0%2FCii9EFh94GKIE9YoAEYbKcZQMKAAAHBNgBzqckARhtB32_w500_h280_c1_t0.jpeg",
+      "hourse_price": "￥208/晚",
+      "hourse_rank": 4.5,
+      "hourse_location": "北京",
+      "hourse_type": "独立房间"
+    },
+    {
+      "owner_id": 712346,
+      "owner_img": "http://upload-images.jianshu.io/upload_images/3629578-d31cfa2a55545412.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240",
+      "hourse_img": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1515854606695&di=b8ec9f0b4ab5d5d51e0cb351fbc05204&imgtype=0&src=http%3A%2F%2Fm.tuniucdn.com%2Ffb2%2Ft1%2FG1%2FM00%2F4B%2FA0%2FCii9EFh94GKIE9YoAEYbKcZQMKAAAHBNgBzqckARhtB32_w500_h280_c1_t0.jpeg",
+      "hourse_price": "￥208/晚",
+      "hourse_rank": 4.5,
+      "hourse_type": "独立房间",
+      "hourse_location": "北京"
+    }
+  ]
+}

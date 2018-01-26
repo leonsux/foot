@@ -29,6 +29,7 @@
 
 <script>
   import {Toast} from 'mint-ui'
+  import axios from 'axios'
   export default {
     name: 'app-mine-register-box',
     data () {
@@ -44,6 +45,20 @@
     },
     methods: {
       getAuthCode: function () {
+        let para = new URLSearchParams()
+        para.append('post_number', this.registerInfo.tel)
+        axios.post('api/mine/send.php', para)
+          .then(res => {
+            if (res.status === 1 || res.status === '1') {
+              // console.log('发送成功！')
+            } else {
+              // console.log('发送失败')
+            }
+          })
+          .catch(res => {
+            throw res
+          })
+
         this.registerInfo.sendAuthCode = false
         this.registerInfo.auth_time = 60
         var authTimetimer = setInterval(() => {
@@ -55,7 +70,6 @@
         }, 1000)
       },
       handleRegisterclick (params) {
-        console.log(params)
         var telReg = /^1[3|4|5|7|8][0-9]{9}$/
         if (!telReg.test(params.userTel)) {
           Toast({
@@ -63,17 +77,6 @@
             duration: 1000
           })
           return 0
-        }
-        var userMsg = localStorage.userMsg ? JSON.parse(localStorage.userMsg) : []
-        for (var i = 0; i < userMsg.length; i++) {
-          if (userMsg[i].userTel === params.userTel) {
-            Toast({
-              message: '该手机号已被注册!',
-              duration: 1000
-            })
-            return
-          }
-          // break
         }
         if (params.userCode.trim() === '') {
           Toast({
@@ -91,11 +94,38 @@
           return 0
         } else {
           // this.$store.commit('AppMineRegister', params)
-          console.log(localStorage.userMsg, params)
+          // 本地存储模拟
+          // console.log(localStorage.userMsg, params)
           let arr = localStorage.userMsg ? JSON.parse(localStorage.userMsg) : []
           arr.push(params)
           localStorage.userMsg = JSON.stringify(arr)
-          this.$router.push({name: 'AppMineLogin'})
+
+          let para = new URLSearchParams()
+          para.append('tel', this.registerInfo.tel)
+          para.append('password', this.registerInfo.password)
+          para.append('veryfiy_code', this.registerInfo.code)
+          axios.post('api/mine/register.php', para)
+            .then(res => {
+              if (res.data.status === 1 || res.data.status === '1') {
+                Toast({
+                  message: '注册成功！',
+                  duration: 1000
+                })
+                this.$router.push({name: 'AppMineLogin'})
+              } else {
+                Toast({
+                  message: '注册失败咯~',
+                  duration: 1000
+                })
+              }
+            })
+            .catch(res => {
+              Toast({
+                message: '不知名的网络问题！',
+                duration: 1000
+              })
+              throw res
+            })
         }
       }
     }

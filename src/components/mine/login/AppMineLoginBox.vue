@@ -14,16 +14,16 @@
           <p class="login">
             <i class="iconfont icon-pwd">&#xe603;</i>
             <input v-model="loginInfo.userPwd"  :type="visi ? 'text' : 'password'" class="pwd" name="pwd" placeholder="请输入密码"/>
-            <i @click="visi=!visi" :class="!visi?'iconfont icon-yanjing-bi':'fa fa-eye'"></i>
+            <i @click="visi=!visi" :class="!visi?'fa fa-eye-slash':'fa fa-eye'"></i>
           </p>
         </div>          
         <div class="auto">
-          <span><input type="checkbox" >&nbsp;&nbsp;记住密码</span>
-          <span><input type="checkbox" >&nbsp;&nbsp;自动登录</span>
+          <!-- <span><input type="checkbox" >&nbsp;&nbsp;记住密码</span>
+          <span><input type="checkbox" >&nbsp;&nbsp;自动登录</span> -->
         </div>
         <button @click="loginInfos('', {userTel:loginInfo.userTel,userPwd:loginInfo.userPwd})" class="login-btn" type="submit" >登录</button>
         <div class="re-links">
-          <router-link :to="{name: 'AppMineRegister'}">忘记密码？</router-link>
+          <!-- <router-link :to="{name: 'AppMineRegister'}">忘记密码？</router-link> -->
           <router-view></router-view>
           <router-link :to="{name: 'AppMineRegister'}">新用户注册</router-link>
           <router-view></router-view>
@@ -37,6 +37,8 @@
 import AppMineRegister from '../register/AppMineRegister'
 import { Toast } from 'mint-ui'
 import { mapState, mapMutations } from 'vuex'
+import axios from 'axios'
+
 export default {
   name: 'app-mine-login-box',
   data () {
@@ -51,6 +53,39 @@ export default {
   methods: {
     ...mapMutations(['setInfo']),
     loginInfos (e, params) {
+      let that = this
+      let para = new URLSearchParams()
+      para.append('tel', params.userTel)
+      para.append('password', params.userPwd)
+      axios.post('api/mine/login.php', para)
+        .then(res => {
+          // console.log('登陆反馈：', res)
+          if (res.data.status === 1 || res.data.status === '1') {
+            Toast({
+              message: '登陆成功！',
+              duration: 1000
+            })
+            that.$router.push({name: 'AppMinePersonal'})
+            that.setInfo({
+              userTel: res.data.userName,
+              userImg: res.data.userImg
+            })
+            // setTimeout(() => {
+            // }, 0)
+          } else {
+            Toast({
+              message: '登陆失败！',
+              duration: 1000
+            })
+          }
+        }).catch(res => {
+          Toast({
+            message: '网络故障！',
+            duration: 1000
+          })
+          throw res
+        })
+      /*
       let that = this
       if (!params) {
         return
@@ -83,6 +118,7 @@ export default {
           duration: 1000
         })
       }
+      */
     }
   },
   components: {

@@ -11,6 +11,8 @@
 <script>
 import { mapState, mapMutations } from 'vuex'
 import { Toast } from 'mint-ui'
+import axios from 'axios'
+
 export default {
   name: 'app-mine-personalMsg',
   data () {
@@ -32,7 +34,6 @@ export default {
         this.userImg = src
         this.setInfo({...this.userMsg, userImg: src})
         let arr = JSON.parse(localStorage.userMsg)
-        Toast('设置成功！')
         arr.forEach((item, i) => {
           if (item.userTel === this.userMsg.userTel) {
             item.userImg = src
@@ -41,6 +42,17 @@ export default {
         localStorage.userMsg = JSON.stringify(arr)
         elImg.src = src  // 给预览图片加上地址
         // 下面可以把图片信息发送到后台，base64，图片名，之类
+        let para = new URLSearchParams()
+        para.append('userTel', this.userMsg.userTel)
+        para.append('userImg', src)
+        axios.post('api/mine/changeimg.php', para)
+          .then(res => {
+            if (res.status_code === 200) {
+              Toast('设置成功！')
+            } else if (res.status_code === 10) {
+              Toast('网络异常！')
+            }
+          })
       }
       if (elInput.files && elInput.files[0]) {
         reader.readAsDataURL(elInput.files[0])

@@ -31,7 +31,8 @@
 </template>
 
 <script>
-  import { Indicator, Toast } from 'mint-ui'
+  import { Indicator } from 'mint-ui'
+  import { mapActions, mapState } from 'vuex'
   export default {
     name: 'search-bar',
     props: ['hotSites', 'histories'],
@@ -42,25 +43,30 @@
       }
     },
     methods: {
+      ...mapActions(['setSearch_keyword']),
       searchStart (key) {
         Indicator.open({
           text: '搜索“' + key + '”',
           spinnerType: 'triple-bounce'
         })
-
         setTimeout(() => {
+          let params = {
+            search_keyword: key,
+            from: this.from,
+            to: this.to
+          }
+          this.setSearch_keyword(params)
           Indicator.close()
-          Toast({
-            message: '网络好像有点问题~',
-            duration: 1000
-          })
+          this.$router.replace('/')
         }, 2000)
       }
     },
     computed: {
+      ...mapState(['duration', 'from', 'to']),
       getMaybes () {
         let key = this.txt
         let arr = []
+        arr.push(this.txt)
         this.maybes.forEach((item) => {
           for (let i = 0; i < key.length; i++) {
             if (item.indexOf(key[i]) !== -1) {

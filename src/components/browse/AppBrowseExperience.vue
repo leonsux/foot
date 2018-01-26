@@ -17,7 +17,7 @@
 
   Vue.use(Lazyload, {
     preLoad: 2,
-    error: 'dist/error.png',
+    error: '/static/imgs/loading.gif',
     loading: '/static/imgs/loadImg.gif',
     attempt: 1
   })

@@ -5,6 +5,8 @@
       <app-browse-experience></app-browse-experience>
 
       <app-browse-type></app-browse-type>
+
+      <AppBrowseHouse></AppBrowseHouse>
     </div>
 
   </div>
@@ -14,13 +16,15 @@
   import AppBrowseFilter from './AppBrowseFilter'
   import AppBrowseExperience from './AppBrowseExperience'
   import AppBrowseType from './AppBrowseType'
+  import AppBrowseHouse from './AppBrowseHouse'
 
   export default {
     name: 'app-browse',
     components: {
       AppBrowseFilter,
       AppBrowseExperience,
-      AppBrowseType
+      AppBrowseType,
+      AppBrowseHouse
     }
   }
 </script>

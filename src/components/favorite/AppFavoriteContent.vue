@@ -1,7 +1,7 @@
 <template>
   <div 
     class="app-favorite-content"
-    v-infinite-scroll="loadMore"
+    
     infinite-scroll-disabled="loading"
     infinite-scroll-distance="10">
     <app-favorite-item v-for="item in collections" :collect="item" :key="item.id"></app-favorite-item>
@@ -57,6 +57,9 @@
         this.loading = true
         this.getFav()
       }
+    },
+    mounted () {
+      this.getFav()
     }
   }
 </script>
